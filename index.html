@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="https://i.postimg.cc/mg37tmcB/logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+    <title>Odu'a Investment Company Limited — Corporate Web Redesign</title>
+    <script>
+      // Gracefully capture and suppress benign sandbox WebSocket connection and HMR errors
+      window.addEventListener('unhandledrejection', function (event) {
+        if (event.reason && (
+          event.reason.message?.includes('WebSocket') || 
+          event.reason.message?.includes('failed to connect') ||
+          String(event.reason).includes('WebSocket')
+        )) {
+          event.preventDefault();
+          console.debug('Suppressed benign sandbox WebSocket rejection:', event.reason);
+        }
+      });
+      window.addEventListener('error', function (event) {
+        if (event.message && (
+          event.message.includes('WebSocket') || 
+          event.message.includes('failed to connect')
+        )) {
+          event.preventDefault();
+          console.debug('Suppressed benign sandbox WebSocket error:', event.message);
+        }
+      }, true);
+    </script>
+  </head>
+  <body class="bg-brand-cream text-brand-charcoal">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
+
