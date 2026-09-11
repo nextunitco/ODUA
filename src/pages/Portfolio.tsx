@@ -248,56 +248,66 @@ export default function Portfolio({
     {
       name: "Wema Bank PLC",
       role: "Financial Services",
-      desc: "Pioneer of ALAT, Africa’s first fully digital banking platform, representing over 73 years of resilient financial services and wealth creation.",
-      logoText: "WEMA"
+      desc: "Pioneer of ALAT, Africa’s first fully digital banking platform, representing over 78 years of resilient financial services and wealth creation.",
+      logoText: "WEMA",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/4/4b/Wema_Bank_logo.png",
+      website: "https://wemabank.com"
     },
     {
       name: "Lafarge Africa Plc",
       role: "Building Materials",
       desc: "A publicly quoted subsidiary of the global LafargeHolcim group, leading regional production of concrete, cement, and eco-friendly building materials.",
-      logoText: "LAFARGE"
+      logoText: "LAFARGE",
+      website: "https://www.lafarge.com.ng"
     },
     {
       name: "Nigerite Limited",
       role: "Construction Solutions",
       desc: "An undisputed market leader offering premium building, roofing, ceiling boards, wall cladding, and integrated architectural systems.",
-      logoText: "NIGERITE"
+      logoText: "NIGERITE",
+      website: "https://nigerite.com"
     },
     {
       name: "Crittall-Hope Nigeria Limited",
       role: "Steel Fabrication",
       desc: "Established in 1958, producing a highly durable and celebrated range of security steel windows, commercial doors, and structural profiles.",
-      logoText: "CRITTALL"
+      logoText: "CRITTALL",
+      website: "https://oduainvestment.com.ng/portfolio"
     },
     {
       name: "Great Nigeria Insurance Plc",
       role: "Insurance & Real Estate",
-      desc: "With over 55 years of active insurance underwriting, GNI coordinates corporate pensions, financial advisory, and high-yield real estate assets.",
-      logoText: "GNI"
+      desc: "With over 60 years of active insurance underwriting, GNI coordinates corporate pensions, financial advisory, and high-yield real estate assets.",
+      logoText: "GNI",
+      website: "https://greatnigeriaplc.com"
     },
     {
       name: "Tower Aluminium Nigeria Limited",
       role: "Industrial Manufacturing",
       desc: "One of West Africa's leading manufacturers of fabricated aluminum sheeting, household cookware, and commercial building coatings.",
-      logoText: "TOWER"
+      logoText: "TOWER",
+      website: "https://toweraluminium.com"
     },
     {
       name: "Ire Clay Products Limited",
       role: "Fired Brick Production",
       desc: "Located in Ekiti State, producing premium load-bearing fired clay blocks, sun breakers, and high-strength floor deck pots.",
-      logoText: "IRE"
+      logoText: "IRE",
+      website: "https://oduainvestment.com.ng/portfolio"
     },
     {
       name: "SKG Pharma",
       role: "Pharmaceuticals",
       desc: "A GMP-compliant world-class pharmaceutical manufacturing center based in Lagos, producing trusted essential health medicines.",
-      logoText: "SKG"
+      logoText: "SKG",
+      website: "https://oduainvestment.com.ng/portfolio"
     },
     {
       name: "Westlink Todoconstruccion Limited",
       role: "Premium Construction Finishes",
       desc: "Established in 2015, importing and marketing premier high-end floor/wall tiles, bathroom finishes, and luxury building hardware.",
-      logoText: "WESTLINK"
+      logoText: "WESTLINK",
+      website: "https://oduainvestment.com.ng/portfolio"
     }
   ];
 
