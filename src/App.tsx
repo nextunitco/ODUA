@@ -92,6 +92,7 @@ import OduaFoundation from './pages/OduaFoundation';
 import SubsidiariesDirectory from './pages/SubsidiariesDirectory';
 import { DynamicCustomPage } from './components/DynamicCustomPage';
 import { LOCAL_IMAGES } from './assets/localImages';
+import { DEFAULT_LOGO, resolveAssetUrl } from './assets/resolveAssetUrl';
 
 // Static assets high-resolution alternative
 const cocoaHouseImg = LOCAL_IMAGES.cocoaHouseSharp;
@@ -1136,7 +1137,7 @@ export default function App() {
                   }`}
                 >
                   <img 
-                    src={activeGeneralSettings?.logo || "https://i.postimg.cc/mg37tmcB/logo.png"} 
+                    src={resolveAssetUrl(activeGeneralSettings?.logo) || DEFAULT_LOGO} 
                     alt="Odu'a Investment Company Limited Logo" 
                     className="w-full h-full object-contain filter drop-shadow-xs"
                     referrerPolicy="no-referrer"

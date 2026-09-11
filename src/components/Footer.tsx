@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { DEFAULT_LOGO, resolveAssetUrl } from '../assets/resolveAssetUrl';
 import { 
   Facebook, 
   Twitter, 
@@ -91,7 +92,7 @@ export default function Footer({
               <div className="flex items-center gap-3">
                 <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white rounded-2xl flex items-center justify-center shadow-xl p-2 ring-2 ring-[#fce303]/50">
                   <img 
-                    src={activeGeneralSettings?.logo || "https://i.postimg.cc/mg37tmcB/logo.png"} 
+                    src={resolveAssetUrl(activeGeneralSettings?.logo) || DEFAULT_LOGO} 
                     alt="Odu'a Logo" 
                     className="w-full h-full object-contain"
                     referrerPolicy="no-referrer"
@@ -326,7 +327,7 @@ export default function Footer({
             <div className="flex items-center gap-3">
               <div className="w-12 h-12 sm:w-14 sm:h-14 bg-white rounded-xl flex items-center justify-center p-1.5 shadow-md ring-1 ring-amber-400/30">
                 <img 
-                  src={activeGeneralSettings?.logo || "https://i.postimg.cc/mg37tmcB/logo.png"} 
+                  src={resolveAssetUrl(activeGeneralSettings?.logo) || DEFAULT_LOGO} 
                   alt="Odu'a Logo" 
                   className="w-full h-full object-contain"
                   referrerPolicy="no-referrer"
@@ -397,7 +398,7 @@ export default function Footer({
             <div className="lg:col-span-1 space-y-4">
               <div className="flex items-center gap-3">
                 <div className="w-14 h-14 sm:w-16 sm:h-16 bg-white rounded-xl p-1.5 flex items-center justify-center shadow-lg ring-1 ring-amber-400/30">
-                  <img src={activeGeneralSettings?.logo || "https://i.postimg.cc/mg37tmcB/logo.png"} alt="Odu'a" className="w-full h-full object-contain" referrerPolicy="no-referrer" />
+                  <img src={resolveAssetUrl(activeGeneralSettings?.logo) || DEFAULT_LOGO} alt="Odu'a" className="w-full h-full object-contain" />
                 </div>
                 <div>
                   <h4 className="font-serif font-black text-white text-base leading-none">ODU'A</h4>
@@ -500,7 +501,7 @@ export default function Footer({
               <div className="space-y-3">
                 <div className="flex items-center gap-3.5">
                   <div className="w-16 h-16 sm:w-18 sm:h-18 bg-white rounded-2xl p-2 flex items-center justify-center shadow-xl ring-2 ring-amber-400/30">
-                    <img src={activeGeneralSettings?.logo || "https://i.postimg.cc/mg37tmcB/logo.png"} alt="Odu'a Logo" className="w-full h-full object-contain" referrerPolicy="no-referrer" />
+                    <img src={resolveAssetUrl(activeGeneralSettings?.logo) || DEFAULT_LOGO} alt="Odu'a Logo" className="w-full h-full object-contain" />
                   </div>
                   <div>
                     <h4 className="font-serif font-black text-xl text-white">ODU'A INVESTMENT</h4>
@@ -627,7 +628,7 @@ export default function Footer({
             <div className="flex items-center gap-3.5">
               <div className="w-14 h-14 sm:w-16 sm:h-16 bg-white rounded-2xl flex items-center justify-center shadow-lg p-1.5 ring-2 ring-amber-400/30">
                 <img 
-                  src={activeGeneralSettings?.logo || "https://i.postimg.cc/mg37tmcB/logo.png"} 
+                  src={resolveAssetUrl(activeGeneralSettings?.logo) || DEFAULT_LOGO} 
                   alt="Odu'a Logo" 
                   className="w-full h-full object-contain"
                   referrerPolicy="no-referrer"
