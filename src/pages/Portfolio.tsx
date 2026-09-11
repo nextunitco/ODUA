@@ -84,7 +84,6 @@ export default function Portfolio({
       features: ["Pioneer in regional cocoa-based beverage processing", "Premium export-grade butter and cocoa cake production", "Located in the Ikeja industrial corridor"],
       logoText: "CI",
       logo: "https://www.google.com/s2/favicons?domain=oduainvestment.com.ng&sz=128",
-      website: "https://oduainvestment.com.ng/portfolio"
     },
     {
       name: "Glanvill Enthoven Insurance Brokers",
@@ -114,7 +113,7 @@ export default function Portfolio({
       features: ["Historic landmarks of Oyo State's political and tourist legacy", "Active refurbishment programs to deliver standard 4-star experiences", "Host to state cabinet dinners and high-profile regional congresses"],
       logoText: "WH",
       logo: "https://premierhotelibadan.com/wp-content/uploads/2020/07/logo.png",
-      website: "https://premierhotelibadan.com"
+      website: "https://www.premierhotelibadan.com"
     },
     {
       name: "E&O Power and Equipment Leasing Limited",
@@ -143,7 +142,7 @@ export default function Portfolio({
       },
       logoText: "WI",
       logo: "https://swagco.ng/wp-content/uploads/2021/05/swagco-logo.png",
-      website: "https://swagco.ng"
+      website: "https://swagco.com.ng/wp-portfolio/westlink-integrated-agriculture-limited/"
     },
     {
       name: "South-West Innovation & Technology (SWIT)",
@@ -153,7 +152,7 @@ export default function Portfolio({
       features: ["Enterprise ERP core architecture", "Regional university tech incubator hubs", "Real-time agro-supply chain traceability"],
       logoText: "SWIT",
       logo: "https://www.google.com/s2/favicons?domain=swit.odua.ng&sz=128",
-      website: "https://swit.odua.ng"
+      website: "https://s-wit.com"
     }
   ];
 
@@ -286,7 +285,7 @@ export default function Portfolio({
       desc: "With over 60 years of active insurance underwriting, GNI coordinates corporate pensions, financial advisory, and high-yield real estate assets.",
       logoText: "GNI",
       logo: "https://www.google.com/s2/favicons?domain=greatnigeriaplc.com&sz=128",
-      website: "https://greatnigeriaplc.com"
+      website: "https://www.gni.com.ng"
     },
     {
       name: "Tower Aluminium Nigeria Limited",

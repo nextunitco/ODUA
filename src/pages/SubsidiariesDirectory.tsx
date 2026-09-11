@@ -55,12 +55,12 @@ const SUBSIDIARIES_DATA: Subsidiary[] = [
     name: "SWAgCo Limited (South-West Agriculture Company)",
     category: "Subsidiary",
     sector: "Agribusiness",
+    established: "2019",
     state: "Oyo / Ondo / Osun / Ekiti",
     location: "Cocoa House, Dugbe, Ibadan",
-    established: "2019",
     description: "The agricultural engine of Odu'a Group, established to unlock commercial farming, rehabilitate abandoned cocoa estates, and spearhead large-scale cassava-to-starch processing.",
     keyAssets: ["12,000+ Hectares Secured Farmland", "Cassava Processing Plants", "Ondo Cocoa Regeneration Hub"],
-    website: "https://swagco.ng",
+    website: "https://swagco.com.ng",
     image: "https://images.unsplash.com/photo-1592982537447-7440770cbfc9?auto=format&fit=crop&w=800&q=80",
     logoText: "SW"
   },
@@ -69,11 +69,11 @@ const SUBSIDIARIES_DATA: Subsidiary[] = [
     category: "Subsidiary",
     sector: "Real Estate & Hospitality",
     state: "Oyo State",
-    location: "Mokola Hill, Ibadan, Oyo State",
     established: "1966",
+    location: "Mokola Hill, Ibadan, Oyo State",
     description: "Sitting majestically atop Mokola Hill, Premier Hotel is West Africa's iconic 4-star hospitality resort undergoing a comprehensive 5-star modernization in partnership with international operators.",
     keyAssets: ["Banquet Halls (1,000+ Capacity)", "Hilltop Olympic Pool", "Presidents Suite Complex"],
-    website: "https://premierhotelibadan.com",
+    website: "https://www.premierhotelibadan.com",
     image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80",
     logo: westernHotelLogo,
     logoText: "PH"
@@ -87,7 +87,6 @@ const SUBSIDIARIES_DATA: Subsidiary[] = [
     established: "1973",
     description: "Renowned garden hotel offering business accommodations, corporate event centers, and serene greenery near the Abeokuta-Ibadan industrial axis.",
     keyAssets: ["Garden Lodges", "Corporate Conference Suites"],
-    website: "https://premierhotelibadan.com",
     image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80",
     logo: westernHotelLogo,
     logoText: "LH"
@@ -129,7 +128,7 @@ const SUBSIDIARIES_DATA: Subsidiary[] = [
     established: "2022",
     description: "Strategic technology incubator driving enterprise ERP solutions, smart agro-logistics tracking, and university tech research commercialization across the 6 Southwest states.",
     keyAssets: ["Digital ERP Backbone", "University Sandbox Labs", "Agro-Traceability Platform"],
-    website: "https://swit.odua.ng",
+    website: "https://s-wit.com",
     image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80",
     logoText: "SWIT"
   },
@@ -142,7 +141,7 @@ const SUBSIDIARIES_DATA: Subsidiary[] = [
     established: "2018",
     description: "Wholly owned agricultural operator managing extensive mechanized grain, maize, and cassava farmlands across Ogun and Ekiti States.",
     keyAssets: ["3,300ha Imeko Farm Hub", "4,283ha Oke-Ako Grain Farm", "Eleyele Agro Warehouse Hub"],
-    website: "https://swagco.ng",
+    website: "https://swagco.com.ng/wp-portfolio/westlink-integrated-agriculture-limited/",
     image: "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=800&q=80",
     logoText: "WIAL"
   },
@@ -155,7 +154,6 @@ const SUBSIDIARIES_DATA: Subsidiary[] = [
     established: "1977",
     description: "Historical cocoa butter, liquor, and cake processing factory undergoing repositioning to export fine cocoa derivative products to international confectionery markets.",
     keyAssets: ["Cocoa Bean Processing Line", "Export Warehouses"],
-    website: "https://oduainvestment.com.ng/portfolio",
     image: "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&w=800&q=80",
     logoText: "CIL"
   },
@@ -182,7 +180,7 @@ const SUBSIDIARIES_DATA: Subsidiary[] = [
     established: "1960",
     description: "A premier insurance underwriting enterprise with over 60 years of active operations providing non-life, life assurance, pensions, and specialized risk solutions.",
     keyAssets: ["Non-Life & Life Underwriting", "Corporate Pensions", "Nationwide Branch Network"],
-    website: "https://greatnigeriaplc.com",
+    website: "https://www.gni.com.ng",
     image: "https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=800&q=80",
     logoText: "GNI"
   },
