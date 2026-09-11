@@ -1,7 +1,8 @@
 import { LOCAL_IMAGES } from './localImages';
 import oduaLogo from './oduaLogo.svg';
+import officialLogo from './images/museum/odua-logo.jpg';
 
-export const DEFAULT_LOGO = oduaLogo;
+export const DEFAULT_LOGO = officialLogo;
 
 export function resolveAssetUrl(url?: string | null): string | undefined {
   if (!url) return undefined;

@@ -5,6 +5,7 @@ import investmentHero from '../assets/images/investment_sectors_hero_17890277347
 import governanceHero from '../assets/images/corporate_governance_hero_1789027752264.jpg';
 import foundationHero from '../assets/images/community_foundation_hero_1789027766844.jpg';
 import jubileeHero from '../assets/images/heritage_jubilee_hero_1789027787329.jpg';
+import museumGallery from '../assets/images/museum/museum-gallery.jpg';
 
 export const HERO_BACKGROUNDS = {
   // Home Page (Official Wikipedia Cocoa House Skyscraper)
@@ -32,7 +33,7 @@ export const HERO_BACKGROUNDS = {
 
   // Media, Careers, Contact, Museum
   media: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=1920&q=80",
-  museum: "https://i.postimg.cc/6qjfZqtr/Whats-App-Image-2026-09-10-at-09-18-44.jpg",
+  museum: museumGallery,
   careers: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1920&q=80",
   contact: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1920&q=80"
 } as const;

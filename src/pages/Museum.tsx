@@ -26,6 +26,10 @@ import {
 } from 'lucide-react';
 import WordPressPageHeader from '../components/WordPressPageHeader';
 import { HERO_BACKGROUNDS } from '../data/heroBackgrounds';
+import museumGallery from '../assets/images/museum/museum-gallery.jpg';
+import museumFoundationalLeaders from '../assets/images/museum/museum-foundational-leaders.jpg';
+import museumGramophone from '../assets/images/museum/museum-gramophone.jpg';
+import museumHallOfFame from '../assets/images/museum/museum-hall-of-fame.jpg';
 
 export interface MuseumPhoto {
   id: number;
@@ -44,7 +48,7 @@ export interface MuseumPhoto {
 export const MUSEUM_PHOTOS: MuseumPhoto[] = [
   {
     id: 1,
-    url: 'https://i.postimg.cc/wvbwK8k4/Whats-App-Image-2026-09-10-at-09-18-44.jpg',
+    url: museumGallery,
     title: 'Grand Entrance Gallery & Cultural Antiquities Corridor',
     category: 'gallery-overview',
     categoryLabel: 'Main Gallery',
@@ -95,7 +99,7 @@ export const MUSEUM_PHOTOS: MuseumPhoto[] = [
   },
   {
     id: 4,
-    url: 'https://i.postimg.cc/tTmB0Qzc/Whats-App-Image-2026-09-10-at-09-18-50.jpg',
+    url: museumGramophone,
     title: 'Sound Artifacts: Antique Gramophone',
     category: 'sound-archives',
     categoryLabel: 'Sound & Acoustic Archives',
@@ -112,7 +116,7 @@ export const MUSEUM_PHOTOS: MuseumPhoto[] = [
   },
   {
     id: 5,
-    url: 'https://i.postimg.cc/QtnfLGqv/Whats-App-Image-2026-09-10-at-09-18-52.jpg',
+    url: museumHallOfFame,
     title: 'The Hall of Fame: Honoring Omoluabi Pioneers',
     category: 'hall-of-fame',
     categoryLabel: 'Hall of Fame',
@@ -146,7 +150,7 @@ export const MUSEUM_PHOTOS: MuseumPhoto[] = [
   },
   {
     id: 7,
-    url: 'https://i.postimg.cc/fytBD2Hq/Whats-App-Image-2026-09-10-at-09-18-55.jpg',
+    url: museumFoundationalLeaders,
     title: 'Foundational Leaders & Political History',
     category: 'hall-of-fame',
     categoryLabel: 'Hall of Fame',
@@ -371,6 +375,7 @@ export default function Museum({ onNavigate }: MuseumProps = {}) {
                 src={MUSEUM_PHOTOS[0].url}
                 alt={MUSEUM_PHOTOS[0].title}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                onError={(event) => { event.currentTarget.src = museumGallery; }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/20 to-transparent" />
               
@@ -479,6 +484,7 @@ export default function Museum({ onNavigate }: MuseumProps = {}) {
                       alt={photo.title}
                       loading="lazy"
                       className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-500"
+                      onError={(event) => { event.currentTarget.src = museumGallery; }}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent opacity-70 group-hover:opacity-90 transition-opacity" />
                     
@@ -948,6 +954,7 @@ export default function Museum({ onNavigate }: MuseumProps = {}) {
                     src={currentLightboxPhoto.url}
                     alt={currentLightboxPhoto.title}
                     className="max-h-[68vh] w-auto max-w-full object-contain mx-auto"
+                    onError={(event) => { event.currentTarget.src = museumGallery; }}
                   />
 
                   {/* Previous / Next Arrow Buttons */}
