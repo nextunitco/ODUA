@@ -29,6 +29,7 @@ import {
   AlertCircle
 } from 'lucide-react';
 import { PageBlock } from './DragDropPageBuilder';
+import { LOCAL_IMAGES } from '../assets/localImages';
 
 export const SOUTHWEST_STATE_LOGOS: Record<string, { name: string; logo: string; capital: string }> = {
   Oyo: { 
@@ -148,7 +149,7 @@ export const DynamicCustomPage: React.FC<DynamicCustomPageProps> = ({
         // 1. HERO BANNER
         if (block.type === 'hero') {
           const heroImg = (pageName.toLowerCase() === 'home' || !d.bannerImage || d.bannerImage.includes('unsplash'))
-            ? (d.bannerImage && !d.bannerImage.includes('unsplash') ? d.bannerImage : '/uploads/cocoa_house_sharp.jpg')
+            ? (d.bannerImage && !d.bannerImage.includes('unsplash') ? d.bannerImage : LOCAL_IMAGES.cocoaHouseSharp)
             : d.bannerImage;
 
           return (
@@ -159,7 +160,7 @@ export const DynamicCustomPage: React.FC<DynamicCustomPageProps> = ({
                   alt={d.title || pageName} 
                   className="w-full h-full object-cover object-center filter brightness-[0.75] saturate-110 contrast-105 scale-100"
                   onError={(e) => {
-                    e.currentTarget.src = "/uploads/cocoa_house_sharp.jpg";
+                    e.currentTarget.src = LOCAL_IMAGES.cocoaHouseSharp;
                   }}
                   referrerPolicy="no-referrer"
                 />

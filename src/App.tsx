@@ -91,9 +91,10 @@ import GovernanceCompliance from './pages/GovernanceCompliance';
 import OduaFoundation from './pages/OduaFoundation';
 import SubsidiariesDirectory from './pages/SubsidiariesDirectory';
 import { DynamicCustomPage } from './components/DynamicCustomPage';
+import { LOCAL_IMAGES } from './assets/localImages';
 
 // Static assets high-resolution alternative
-const cocoaHouseImg = '/uploads/cocoa_house_sharp.jpg';
+const cocoaHouseImg = LOCAL_IMAGES.cocoaHouseSharp;
 
 // Helper to resolve initial page from URL query, hash, or reload persistence
 function getInitialPage(): string {

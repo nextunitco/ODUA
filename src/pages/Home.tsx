@@ -14,6 +14,7 @@ import {
 } from 'lucide-react';
 import { Project, NewsCard } from '../types';
 import { HERO_BACKGROUNDS } from '../data/heroBackgrounds';
+import { LOCAL_IMAGES } from '../assets/localImages';
 
 interface HomeProps {
   cocoaHouseImg: string;
@@ -144,7 +145,7 @@ export default function Home({
             alt="Cocoa House Skyscraper Ibadan - Historic Headquarters of Odu'a Investment" 
             className="w-full h-full object-cover object-center transform-gpu will-change-transform"
             onError={(e) => {
-              e.currentTarget.src = "/uploads/cocoa_house_wikipedia.jpg";
+              e.currentTarget.src = LOCAL_IMAGES.cocoaHouseWikipedia;
             }}
             referrerPolicy="no-referrer"
           />

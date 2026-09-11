@@ -12,6 +12,7 @@ import {
 } from 'lucide-react';
 import WordPressPageHeader from './WordPressPageHeader';
 import { HERO_BACKGROUNDS } from '../data/heroBackgrounds';
+import { LOCAL_IMAGES } from '../assets/localImages';
 
 interface TimelineEvent {
   year: string;
@@ -31,7 +32,7 @@ const JUBILEE_EVENTS: TimelineEvent[] = [
     subtitle: "Birth of Odu'a Investment Company Limited",
     description: "Following the creation of Oyo, Ogun, and Ondo States out of the old Western State, Odu'a Investment Company Limited was incorporated on July 1, 1976, to hold and manage the commercial assets of the former Western Region.",
     impact: "Created Sub-Saharan Africa's premier state-owned commercial holding conglomerate.",
-    image: "/uploads/cocoa_house_sharp.jpg"
+    image: LOCAL_IMAGES.cocoaHouseSharp
   },
   {
     year: "1982",
@@ -85,7 +86,7 @@ const JUBILEE_EVENTS: TimelineEvent[] = [
     subtitle: "Half a Century of Economic Leadership",
     description: "Celebrating 50 years (1976-2026) of wealth creation, cultural heritage preservation, and sustainable growth across Oyo, Ogun, Ondo, Osun, Ekiti, and Lagos States.",
     impact: "Pledging a ₦500B regional asset portfolio by 2030.",
-    image: "/uploads/cocoa_house_sharp.jpg"
+    image: LOCAL_IMAGES.cocoaHouseSharp
   }
 ];
 

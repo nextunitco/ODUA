@@ -32,6 +32,7 @@ import {
   MapPin
 } from 'lucide-react';
 import { ImageUploader } from './ImageUploader';
+import { LOCAL_IMAGES } from '../assets/localImages';
 
 export interface PageBlock {
   id: string;
@@ -86,7 +87,7 @@ export const BLOCK_LIBRARY_PRESETS: Array<{
       badge: 'The Engine Room of Southwest Nigeria',
       title: 'Enhancing the legacy for future generations',
       subtitle: 'Through strategic investments and efficient management of our diversified portfolio, we unlock new opportunities across Southwest Nigeria.',
-      bannerImage: '/uploads/cocoa_house_sharp.jpg',
+      bannerImage: LOCAL_IMAGES.cocoaHouseSharp,
       primaryBtnText: 'Explore Portfolio',
       primaryBtnLink: 'Portfolio',
       secondaryBtnText: 'Co-Invest with Us',
