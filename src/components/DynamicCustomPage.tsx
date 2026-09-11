@@ -30,6 +30,7 @@ import {
 } from 'lucide-react';
 import { PageBlock } from './DragDropPageBuilder';
 import { LOCAL_IMAGES } from '../assets/localImages';
+import { resolveAssetUrl } from '../assets/resolveAssetUrl';
 
 export const SOUTHWEST_STATE_LOGOS: Record<string, { name: string; logo: string; capital: string }> = {
   Oyo: { 
@@ -149,7 +150,7 @@ export const DynamicCustomPage: React.FC<DynamicCustomPageProps> = ({
         // 1. HERO BANNER
         if (block.type === 'hero') {
           const heroImg = (pageName.toLowerCase() === 'home' || !d.bannerImage || d.bannerImage.includes('unsplash'))
-            ? (d.bannerImage && !d.bannerImage.includes('unsplash') ? d.bannerImage : LOCAL_IMAGES.cocoaHouseSharp)
+            ? (d.bannerImage && !d.bannerImage.includes('unsplash') ? resolveAssetUrl(d.bannerImage) : LOCAL_IMAGES.cocoaHouseSharp)
             : d.bannerImage;
 
           return (

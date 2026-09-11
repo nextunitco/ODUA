@@ -15,6 +15,7 @@ import {
 import { Project, NewsCard } from '../types';
 import { HERO_BACKGROUNDS } from '../data/heroBackgrounds';
 import { LOCAL_IMAGES } from '../assets/localImages';
+import { resolveAssetUrl } from '../assets/resolveAssetUrl';
 
 interface HomeProps {
   cocoaHouseImg: string;
@@ -60,7 +61,7 @@ export default function Home({
   // Prioritize official Wikipedia Cocoa House image for hero background
   const rawBanner = pageContent?.bannerImage;
   const isBlurryBanner = !rawBanner || rawBanner.includes('gj0gKfZ7');
-  const activeHeroBanner = (!isBlurryBanner && rawBanner) ? rawBanner : HERO_BACKGROUNDS.home;
+  const activeHeroBanner = resolveAssetUrl((!isBlurryBanner && rawBanner) ? rawBanner : HERO_BACKGROUNDS.home) || LOCAL_IMAGES.cocoaHouseWikipedia;
   const activeHeroTitle = (pageContent?.heroTitle && !pageContent.heroTitle.includes('Pioneering')) 
     ? pageContent.heroTitle 
     : (generalSettings?.heroTitle && !generalSettings.heroTitle.includes('Pioneering'))
