@@ -1,3 +1,19 @@
+import oyoStateLogo from './images/states/oyo-state.jpg';
+import ogunStateLogo from './images/states/ogun-state.png';
+import ondoStateLogo from './images/states/ondo-state.png';
+import osunStateLogo from './images/states/osun-state.jpg';
+import ekitiStateLogo from './images/states/ekiti-state.gif';
+import lagosStateLogo from './images/states/lagos-state.jpg';
+
+const UPLOADED_STATE_LOGOS: Record<string, string> = {
+  oyo: oyoStateLogo,
+  ogun: ogunStateLogo,
+  ondo: ondoStateLogo,
+  osun: osunStateLogo,
+  ekiti: ekitiStateLogo,
+  lagos: lagosStateLogo,
+};
+
 const STATE_COLORS: Record<string, [string, string]> = {
   oyo: ['#0b6b4b', '#f1cf00'],
   ogun: ['#1b5e20', '#f1cf00'],
@@ -9,6 +25,8 @@ const STATE_COLORS: Record<string, [string, string]> = {
 
 export function getStateLogo(state: string): string {
   const key = state.toLowerCase().replace(/ state$/, '').trim();
+  if (UPLOADED_STATE_LOGOS[key]) return UPLOADED_STATE_LOGOS[key];
+
   const [primary, accent] = STATE_COLORS[key] || ['#0b6b4b', '#f1cf00'];
   const initials = key.slice(0, 2).toUpperCase();
   const label = `${key.charAt(0).toUpperCase()}${key.slice(1)} State`;
