@@ -146,6 +146,17 @@ function getInitialPage(): string {
 }
 
 export default function App() {
+  useEffect(() => {
+    const handleBrokenImage = (event: Event) => {
+      const image = event.target;
+      if (!(image instanceof HTMLImageElement) || image.dataset.fallbackApplied === 'true') return;
+      image.dataset.fallbackApplied = 'true';
+      image.src = DEFAULT_LOGO;
+    };
+
+    window.addEventListener('error', handleBrokenImage, true);
+    return () => window.removeEventListener('error', handleBrokenImage, true);
+  }, []);
   // Navigation Routing States - Persistent across reloads
   const [currentPage, setCurrentPage] = useState<string>(() => getInitialPage());
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);

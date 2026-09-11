@@ -4,6 +4,7 @@ import { Eye, Target, Shield, MapPin, Landmark, Users, TrendingUp, Briefcase } f
 import { StateMetadata } from '../types';
 import WordPressPageHeader from '../components/WordPressPageHeader';
 import { HERO_BACKGROUNDS } from '../data/heroBackgrounds';
+import { getStateLogo } from '../assets/stateLogos';
 
 // Structured regional data for the 6 Southwest owner states of Odu'a Investment
 const southwestStates: StateMetadata[] = [
@@ -15,7 +16,7 @@ const southwestStates: StateMetadata[] = [
     population: '7.8 Million',
     keySectors: ['Mechanized Agriculture', 'Agro-processing', 'Solid Minerals', 'Trade & Logistics'],
     description: 'The Pacesetter State. Home to the historical corporate headquarters of Odu’a Investment (Cocoa House, Ibadan). It serves as the primary agricultural and logistics hub of the group.',
-    logo: 'https://i.postimg.cc/mktQk9JQ/images.jpg',
+    logo: getStateLogo('Oyo'),
     coordinates: { x: 120, y: 80 } // Simplified coordinates for SVG layout
   },
   {
@@ -26,7 +27,7 @@ const southwestStates: StateMetadata[] = [
     population: '5.2 Million',
     keySectors: ['Manufacturing & Industrial Parks', 'Real Estate Development', 'Mining', 'Education'],
     description: 'The Gateway State. Boasting the highest concentration of industrial estates in Nigeria, Ogun is a critical manufacturing powerhouse and real estate development frontier.',
-    logo: 'https://i.postimg.cc/C5BqSgnC/logo.png',
+    logo: getStateLogo('Ogun'),
     coordinates: { x: 80, y: 160 }
   },
   {
@@ -37,7 +38,7 @@ const southwestStates: StateMetadata[] = [
     population: '4.7 Million',
     keySectors: ['Cultural Tourism', 'Gold Mining', 'Food Crops', 'Renewable Energy Projects'],
     description: 'The State of the Living Spring. A cultural epicenter rich in mineral resources and heritage tourism, driving new-age renewable energy and ecological initiatives.',
-    logo: 'https://i.postimg.cc/6pNvJFWn/images-(1).jpg',
+    logo: getStateLogo('Osun'),
     coordinates: { x: 180, y: 110 }
   },
   {
@@ -48,7 +49,7 @@ const southwestStates: StateMetadata[] = [
     population: '3.3 Million',
     keySectors: ['Knowledge Economy & Tech Hubs', 'Forestry & Wood Processing', 'Rice & Cocoa Farming'],
     description: 'The Land of Honour. Transitioning aggressively into a knowledge-based economy with strong tech hubs, modern forestry practices, and institutional academic frameworks.',
-    logo: 'https://i.postimg.cc/sgp5Ms67/setting-ekiti-logo.gif',
+    logo: getStateLogo('Ekiti'),
     coordinates: { x: 240, y: 100 }
   },
   {
@@ -59,7 +60,7 @@ const southwestStates: StateMetadata[] = [
     population: '4.6 Million',
     keySectors: ['Bitumen & Oil / Gas', 'Blue Economy (Deep Sea Port)', 'Cocoa Cultivation', 'Power Generation'],
     description: 'The Sunshine State. Possessing Nigeria’s longest coastline, rich bitumen deposits, and massive deep-sea port potential, Ondo is central to Odu’a’s maritime and energy strategy.',
-    logo: 'https://i.postimg.cc/L8f3jzXz/images.png',
+    logo: getStateLogo('Ondo'),
     coordinates: { x: 230, y: 180 }
   },
   {
@@ -70,7 +71,7 @@ const southwestStates: StateMetadata[] = [
     population: '15.5 Million',
     keySectors: ['Financial Services', 'Technology & Startups', 'Deepwater Ports', 'Commercial Real Estate'],
     description: 'The Centre of Excellence. Admitted as a shareholder-state in 2018, Lagos anchors the group’s financial market strategies, venture capital structures, and premium tech hub integrations.',
-    logo: 'https://i.postimg.cc/yYRQsJR2/images-(2).jpg',
+    logo: getStateLogo('Lagos'),
     coordinates: { x: 90, y: 220 }
   }
 ];

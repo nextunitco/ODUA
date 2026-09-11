@@ -16,6 +16,7 @@ import { Project, NewsCard } from '../types';
 import { HERO_BACKGROUNDS } from '../data/heroBackgrounds';
 import { LOCAL_IMAGES } from '../assets/localImages';
 import { resolveAssetUrl } from '../assets/resolveAssetUrl';
+import { getStateLogo } from '../assets/stateLogos';
 
 interface HomeProps {
   cocoaHouseImg: string;
@@ -329,12 +330,12 @@ export default function Home({
 
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3.5 sm:gap-5">
             {[
-              { name: 'Oyo State', capital: 'Ibadan', tagline: 'The Pace Setter', logo: 'https://i.postimg.cc/mktQk9JQ/images.jpg' },
-              { name: 'Ogun State', capital: 'Abeokuta', tagline: 'The Gateway State', logo: 'https://i.postimg.cc/C5BqSgnC/logo.png' },
-              { name: 'Ondo State', capital: 'Akure', tagline: 'The Sunshine State', logo: 'https://i.postimg.cc/L8f3jzXz/images.png' },
-              { name: 'Osun State', capital: 'Osogbo', tagline: 'State of the Virtuous', logo: 'https://i.postimg.cc/6pNvJFWn/images-(1).jpg' },
-              { name: 'Ekiti State', capital: 'Ado-Ekiti', tagline: 'Land of Honour', logo: 'https://i.postimg.cc/sgp5Ms67/setting-ekiti-logo.gif' },
-              { name: 'Lagos State', capital: 'Ikeja', tagline: 'Centre of Excellence', logo: 'https://i.postimg.cc/yYRQsJR2/images-(2).jpg' }
+              { name: 'Oyo State', capital: 'Ibadan', tagline: 'The Pace Setter', logo: getStateLogo('Oyo') },
+              { name: 'Ogun State', capital: 'Abeokuta', tagline: 'The Gateway State', logo: getStateLogo('Ogun') },
+              { name: 'Ondo State', capital: 'Akure', tagline: 'The Sunshine State', logo: getStateLogo('Ondo') },
+              { name: 'Osun State', capital: 'Osogbo', tagline: 'State of the Virtuous', logo: getStateLogo('Osun') },
+              { name: 'Ekiti State', capital: 'Ado-Ekiti', tagline: 'Land of Honour', logo: getStateLogo('Ekiti') },
+              { name: 'Lagos State', capital: 'Ikeja', tagline: 'Centre of Excellence', logo: getStateLogo('Lagos') }
             ].map((st, idx) => (
               <motion.div
                 key={st.name}
