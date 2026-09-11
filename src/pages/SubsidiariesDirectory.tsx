@@ -128,6 +128,7 @@ const SUBSIDIARIES_DATA: Subsidiary[] = [
     keyAssets: ["Digital ERP Backbone", "University Sandbox Labs", "Agro-Traceability Platform"],
     website: "https://swit.odua.ng",
     image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80",
+    logo: "https://www.google.com/s2/favicons?domain=swit.odua.ng&sz=128",
     logoText: "SWIT"
   },
   {
@@ -155,6 +156,7 @@ const SUBSIDIARIES_DATA: Subsidiary[] = [
     keyAssets: ["Cocoa Bean Processing Line", "Export Warehouses"],
     website: "https://oduainvestment.com.ng/portfolio",
     image: "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&w=800&q=80",
+    logo: "https://www.google.com/s2/favicons?domain=oduainvestment.com.ng&sz=128",
     logoText: "CIL"
   },
   {
@@ -182,6 +184,7 @@ const SUBSIDIARIES_DATA: Subsidiary[] = [
     keyAssets: ["Non-Life & Life Underwriting", "Corporate Pensions", "Nationwide Branch Network"],
     website: "https://greatnigeriaplc.com",
     image: "https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=800&q=80",
+    logo: "https://www.google.com/s2/favicons?domain=greatnigeriaplc.com&sz=128",
     logoText: "GNI"
   },
   {
@@ -195,6 +198,7 @@ const SUBSIDIARIES_DATA: Subsidiary[] = [
     keyAssets: ["₦1.1T+ AUM", "500,000+ RSA Contributors", "PenCom Aa- Grade"],
     website: "https://fcmbpensions.com",
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
+    logo: "https://www.google.com/s2/favicons?domain=fcmbpensions.com&sz=128",
     logoText: "FCMB"
   }
 ];

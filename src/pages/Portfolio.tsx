@@ -83,6 +83,7 @@ export default function Portfolio({
       desc: "An industrial-scale cocoa processor specializing in producing and distributing high-yield cocoa butter, cake, powder, and cocoa-based consumer beverages.",
       features: ["Pioneer in regional cocoa-based beverage processing", "Premium export-grade butter and cocoa cake production", "Located in the Ikeja industrial corridor"],
       logoText: "CI",
+      logo: "https://www.google.com/s2/favicons?domain=oduainvestment.com.ng&sz=128",
       website: "https://oduainvestment.com.ng/portfolio"
     },
     {
@@ -122,6 +123,7 @@ export default function Portfolio({
       desc: "An engineering leader focused on the sales, leasing, and preventative maintenance of heavy-duty backup generators and electricity transformers.",
       features: ["Signed maintenance contracts with prominent multinationals", "Fleet lease options for critical industrial operations", "Rapid-response emergency repair engineers on-call 24/7"],
       logoText: "EO",
+      logo: "https://www.google.com/s2/favicons?domain=oduainvestment.com.ng&sz=128",
       website: "https://oduainvestment.com.ng/portfolio"
     },
     {
@@ -150,6 +152,7 @@ export default function Portfolio({
       desc: "Propelling enterprise cloud systems, digital government automation, and smart agro-logistics trace engines for Odu'a subsidiaries and external clients.",
       features: ["Enterprise ERP core architecture", "Regional university tech incubator hubs", "Real-time agro-supply chain traceability"],
       logoText: "SWIT",
+      logo: "https://www.google.com/s2/favicons?domain=swit.odua.ng&sz=128",
       website: "https://swit.odua.ng"
     }
   ];
@@ -258,6 +261,7 @@ export default function Portfolio({
       role: "Building Materials",
       desc: "A publicly quoted subsidiary of the global LafargeHolcim group, leading regional production of concrete, cement, and eco-friendly building materials.",
       logoText: "LAFARGE",
+      logo: "https://www.google.com/s2/favicons?domain=lafarge.com.ng&sz=128",
       website: "https://www.lafarge.com.ng"
     },
     {
@@ -265,6 +269,7 @@ export default function Portfolio({
       role: "Construction Solutions",
       desc: "An undisputed market leader offering premium building, roofing, ceiling boards, wall cladding, and integrated architectural systems.",
       logoText: "NIGERITE",
+      logo: "https://www.google.com/s2/favicons?domain=nigerite.com&sz=128",
       website: "https://nigerite.com"
     },
     {
@@ -272,6 +277,7 @@ export default function Portfolio({
       role: "Steel Fabrication",
       desc: "Established in 1958, producing a highly durable and celebrated range of security steel windows, commercial doors, and structural profiles.",
       logoText: "CRITTALL",
+      logo: "https://www.google.com/s2/favicons?domain=oduainvestment.com.ng&sz=128",
       website: "https://oduainvestment.com.ng/portfolio"
     },
     {
@@ -279,6 +285,7 @@ export default function Portfolio({
       role: "Insurance & Real Estate",
       desc: "With over 60 years of active insurance underwriting, GNI coordinates corporate pensions, financial advisory, and high-yield real estate assets.",
       logoText: "GNI",
+      logo: "https://www.google.com/s2/favicons?domain=greatnigeriaplc.com&sz=128",
       website: "https://greatnigeriaplc.com"
     },
     {
@@ -286,6 +293,7 @@ export default function Portfolio({
       role: "Industrial Manufacturing",
       desc: "One of West Africa's leading manufacturers of fabricated aluminum sheeting, household cookware, and commercial building coatings.",
       logoText: "TOWER",
+      logo: "https://www.google.com/s2/favicons?domain=toweraluminium.com&sz=128",
       website: "https://toweraluminium.com"
     },
     {
@@ -293,6 +301,7 @@ export default function Portfolio({
       role: "Fired Brick Production",
       desc: "Located in Ekiti State, producing premium load-bearing fired clay blocks, sun breakers, and high-strength floor deck pots.",
       logoText: "IRE",
+      logo: "https://www.google.com/s2/favicons?domain=oduainvestment.com.ng&sz=128",
       website: "https://oduainvestment.com.ng/portfolio"
     },
     {
@@ -300,6 +309,7 @@ export default function Portfolio({
       role: "Pharmaceuticals",
       desc: "A GMP-compliant world-class pharmaceutical manufacturing center based in Lagos, producing trusted essential health medicines.",
       logoText: "SKG",
+      logo: "https://www.google.com/s2/favicons?domain=oduainvestment.com.ng&sz=128",
       website: "https://oduainvestment.com.ng/portfolio"
     },
     {
@@ -307,6 +317,7 @@ export default function Portfolio({
       role: "Premium Construction Finishes",
       desc: "Established in 2015, importing and marketing premier high-end floor/wall tiles, bathroom finishes, and luxury building hardware.",
       logoText: "WESTLINK",
+      logo: "https://www.google.com/s2/favicons?domain=oduainvestment.com.ng&sz=128",
       website: "https://oduainvestment.com.ng/portfolio"
     }
   ];
