@@ -148,7 +148,7 @@ export const DynamicCustomPage: React.FC<DynamicCustomPageProps> = ({
         // 1. HERO BANNER
         if (block.type === 'hero') {
           const heroImg = (pageName.toLowerCase() === 'home' || !d.bannerImage || d.bannerImage.includes('unsplash'))
-            ? (d.bannerImage && !d.bannerImage.includes('unsplash') ? d.bannerImage : 'https://i.postimg.cc/gj0gKfZ7/cocoa-house.jpg')
+            ? (d.bannerImage && !d.bannerImage.includes('unsplash') ? d.bannerImage : '/uploads/cocoa_house_sharp.jpg')
             : d.bannerImage;
 
           return (
@@ -159,7 +159,7 @@ export const DynamicCustomPage: React.FC<DynamicCustomPageProps> = ({
                   alt={d.title || pageName} 
                   className="w-full h-full object-cover object-center filter brightness-[0.75] saturate-110 contrast-105 scale-100"
                   onError={(e) => {
-                    e.currentTarget.src = "https://i.postimg.cc/gj0gKfZ7/cocoa-house.jpg";
+                    e.currentTarget.src = "/uploads/cocoa_house_sharp.jpg";
                   }}
                   referrerPolicy="no-referrer"
                 />

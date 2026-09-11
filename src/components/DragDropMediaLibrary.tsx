@@ -59,9 +59,7 @@ export function DragDropMediaLibrary({
 
     for (let i = 0; i < files.length; i++) {
       const file = files[i];
-      if (!file.type.startsWith('image/')) {
-        continue;
-      }
+      if (file.size > 50 * 1024 * 1024) continue;
 
       try {
         const base64Data = await new Promise<string>((resolve, reject) => {
@@ -71,38 +69,62 @@ export function DragDropMediaLibrary({
           reader.readAsDataURL(file);
         });
 
-        const res = await fetch('/api/upload', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            name: file.name,
-            data: base64Data
-          })
-        });
+        const sizeKb = Math.round(file.size / 1024);
+        const sizeStr = sizeKb > 1024 ? `${(sizeKb / 1024).toFixed(1)} MB` : `${sizeKb} KB`;
 
-        const data = await res.json();
-        if (res.ok && data.success) {
-          const sizeKb = Math.round(file.size / 1024);
-          const sizeStr = sizeKb > 1024 ? `${(sizeKb / 1024).toFixed(1)} MB` : `${sizeKb} KB`;
+        try {
+          const res = await fetch('/api/upload', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              name: file.name,
+              data: base64Data
+            })
+          });
 
+          const data = await res.json();
+          if (res.ok && data.success) {
+            newItems.push({
+              id: Date.now().toString() + '_' + i,
+              url: data.url,
+              title: file.name.replace(/\.[^/.]+$/, "").replace(/[-_]/g, " "),
+              date: new Date().toISOString().split('T')[0],
+              size: data.size || sizeStr
+            });
+          } else {
+            newItems.push({
+              id: Date.now().toString() + '_' + i,
+              url: base64Data,
+              title: file.name.replace(/\.[^/.]+$/, "").replace(/[-_]/g, " "),
+              date: new Date().toISOString().split('T')[0],
+              size: sizeStr
+            });
+          }
+        } catch (uploadErr) {
           newItems.push({
             id: Date.now().toString() + '_' + i,
-            url: data.url,
+            url: base64Data,
             title: file.name.replace(/\.[^/.]+$/, "").replace(/[-_]/g, " "),
             date: new Date().toISOString().split('T')[0],
             size: sizeStr
           });
         }
       } catch (err: any) {
-        console.error('File upload error:', err);
+        console.error('File read error:', err);
       }
     }
 
     if (newItems.length > 0) {
-      setMediaItems(prev => [...newItems, ...prev]);
+      setMediaItems(prev => {
+        const updated = [...newItems, ...prev];
+        try {
+          localStorage.setItem('odua_media_library', JSON.stringify(updated));
+        } catch (e) {}
+        return updated;
+      });
       showNotification(`Successfully uploaded ${newItems.length} media asset(s)!`);
     } else {
-      setError('Could not process dropped files. Please ensure you upload valid image formats.');
+      setError('Could not process dropped files. Please ensure your files are under 50MB.');
     }
 
     setUploading(false);
@@ -164,8 +186,21 @@ export function DragDropMediaLibrary({
     setTimeout(() => setCopiedId(null), 2000);
   };
 
-  const deleteItem = (id: string) => {
-    setMediaItems(mediaItems.filter(m => m.id !== id));
+  const deleteItem = async (id: string) => {
+    const itemToDelete = mediaItems.find(m => m.id === id);
+    if (itemToDelete && itemToDelete.url.startsWith('/uploads/')) {
+      const fileName = itemToDelete.url.split('/').pop();
+      if (fileName) {
+        try {
+          await fetch(`/api/uploads/${fileName}`, { method: 'DELETE' });
+        } catch (e) {}
+      }
+    }
+    const updated = mediaItems.filter(m => m.id !== id);
+    setMediaItems(updated);
+    try {
+      localStorage.setItem('odua_media_library', JSON.stringify(updated));
+    } catch (e) {}
     showNotification('Media asset removed.');
   };
 

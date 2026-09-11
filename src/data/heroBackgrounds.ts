@@ -1,13 +1,14 @@
 // Curated and AI-generated high-resolution hero background images for all web pages
 import headquartersHero from '../assets/images/corporate_headquarters_hero_1789027717425.jpg';
+import cocoaHouseWikipedia from '../assets/images/cocoa_house_wikipedia.jpg';
 import investmentHero from '../assets/images/investment_sectors_hero_1789027734737.jpg';
 import governanceHero from '../assets/images/corporate_governance_hero_1789027752264.jpg';
 import foundationHero from '../assets/images/community_foundation_hero_1789027766844.jpg';
 import jubileeHero from '../assets/images/heritage_jubilee_hero_1789027787329.jpg';
 
 export const HERO_BACKGROUNDS = {
-  // Home Page
-  home: headquartersHero,
+  // Home Page (Official Wikipedia Cocoa House Skyscraper)
+  home: cocoaHouseWikipedia,
 
   // About Pages
   aboutUs: headquartersHero,

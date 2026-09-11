@@ -240,7 +240,7 @@ export default function Admin({
     return DEFAULT_MENU_ITEMS;
   });
   const [mediaLibraryItems, setMediaLibraryItems] = useState<MediaItem[]>([
-    { id: 'm1', url: 'https://i.postimg.cc/gj0gKfZ7/cocoa-house.jpg', title: 'Cocoa House Headquarters', date: '2025-06-15', size: '1.2 MB' },
+    { id: 'm1', url: '/uploads/cocoa_house_sharp.jpg', title: 'Cocoa House Headquarters', date: '2025-06-15', size: '1.2 MB' },
     { id: 'm2', url: 'https://images.unsplash.com/photo-1541888946425-d0fbb18086f6?auto=format&fit=crop&q=80&w=800', title: 'WEMABOD Real Estate Estate Development', date: '2025-07-20', size: '940 KB' },
     { id: 'm3', url: 'https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&q=80&w=800', title: 'SWAgCo Cashew Plantation Farm', date: '2025-08-11', size: '1.4 MB' },
     { id: 'm4', url: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800', title: 'Lagos Island Corporate Tower', date: '2025-09-02', size: '820 KB' },
@@ -388,7 +388,7 @@ export default function Admin({
     if (Array.isArray(existingBlocks) && existingBlocks.length > 0) return [...existingBlocks];
     if (pName.toLowerCase() === 'home') {
       return [
-        { id: 'b_hero', type: 'hero', title: 'Hero Banner', visible: true, data: { badge: '', title: "Enhancing the legacy for future generations", subtitle: "Through strategic investments and efficient management of our diversified portfolio, we are enhancing our rich legacy and unlocking new opportunities that will thrive for generations to come.", bannerImage: 'https://i.postimg.cc/gj0gKfZ7/cocoa-house.jpg', primaryBtnText: 'Learn More', secondaryBtnText: '' } },
+        { id: 'b_hero', type: 'hero', title: 'Hero Banner', visible: true, data: { badge: '', title: "Enhancing the legacy for future generations", subtitle: "Through strategic investments and efficient management of our diversified portfolio, we are enhancing our rich legacy and unlocking new opportunities that will thrive for generations to come.", bannerImage: '/uploads/cocoa_house_sharp.jpg', primaryBtnText: 'Learn More', secondaryBtnText: '' } },
         { id: 'b_stats', type: 'stats', title: 'Sovereign Metrics Bar', visible: true, data: { stat1Value: '₦300B+', stat1Label: 'Asset Foundation', stat2Value: '6 States', stat2Label: 'Southwest Shareholders', stat3Value: '1976', stat3Label: '50-Year Heritage', stat4Value: '25+', stat4Label: 'Active Ventures' } },
         { id: 'b_states', type: 'states', title: 'SW Sovereign States Grid', visible: true, data: { title: 'The 6 Owner States of Southwest Nigeria' } },
         { id: 'b_strategy', type: 'strategy', title: 'Strategic Thrust & Mandate', visible: true, data: { title: 'Our Core Strategic Thrust', subtitle: 'Transforming legacy strengths into global market competitive advantages.' } },
@@ -1369,7 +1369,7 @@ export default function Admin({
         subtitle: '',
         description: '',
         impact: '',
-        image: 'https://i.postimg.cc/gj0gKfZ7/cocoa-house.jpg'
+        image: '/uploads/cocoa_house_sharp.jpg'
       });
     }
     setIsJubileeEventFormOpen(true);
@@ -1613,6 +1613,44 @@ export default function Admin({
     }
   };
 
+  const handleDeleteInquiry = async (id: string | number) => {
+    if (!confirm('Are you sure you want to delete this customer inquiry from the inbox?')) return;
+    try {
+      const res = await fetch(`/api/content/inquiries/${id}`, { method: 'DELETE' });
+      if (res.ok) {
+        triggerBanner('Inquiry deleted from inbox.');
+        fetchContent();
+      } else {
+        throw new Error('Server non-2xx');
+      }
+    } catch (err) {
+      const updated = (db.inquiries || []).filter((item: any) => String(item.id) !== String(id));
+      const updatedDb = { ...db, inquiries: updated };
+      setDb(updatedDb);
+      broadcastCmsUpdate(updatedDb);
+      triggerBanner('Inquiry deleted locally.');
+    }
+  };
+
+  const handleDeleteWhistleblower = async (id: string | number) => {
+    if (!confirm('Are you sure you want to delete this confidential report?')) return;
+    try {
+      const res = await fetch(`/api/content/whistleblower/${id}`, { method: 'DELETE' });
+      if (res.ok) {
+        triggerBanner('Whistleblower report deleted.');
+        fetchContent();
+      } else {
+        throw new Error('Server non-2xx');
+      }
+    } catch (err) {
+      const updated = (db.whistleblowerReports || []).filter((item: any) => String(item.id) !== String(id));
+      const updatedDb = { ...db, whistleblowerReports: updated };
+      setDb(updatedDb);
+      broadcastCmsUpdate(updatedDb);
+      triggerBanner('Report deleted locally.');
+    }
+  };
+
   // Auth lock screen overlay
   if (!isAuthenticated) {
     return (
@@ -1690,8 +1728,8 @@ export default function Admin({
       <aside className="w-full lg:w-72 bg-neutral-950 text-white shrink-0 flex flex-col border-r border-neutral-900 p-4 lg:p-5 h-full overflow-hidden z-20">
         {/* Admin Header */}
         <div className="flex items-center gap-3 shrink-0 pb-3.5 mb-2 border-b border-neutral-900">
-          <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center p-1 border border-neutral-800 shadow-sm">
-            <img src="https://i.postimg.cc/mg37tmcB/logo.png" alt="Odu'a" className="object-contain w-full h-full" referrerPolicy="no-referrer" />
+          <div className="w-12 h-12 sm:w-14 sm:h-14 bg-white rounded-2xl flex items-center justify-center p-1.5 border border-amber-400/40 ring-1 ring-amber-400/20 shadow-md">
+            <img src={db.generalSettings?.logo || "https://i.postimg.cc/mg37tmcB/logo.png"} alt="Odu'a" className="object-contain w-full h-full" referrerPolicy="no-referrer" />
           </div>
           <div>
             <h2 className="font-serif font-black text-sm tracking-widest text-white">ODU'A CMS</h2>
@@ -2308,11 +2346,34 @@ export default function Admin({
                         />
                       </div>
                     </div>
+
+                    {/* Logo & Favicon Upload Cards */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
+                      <div className="p-4 rounded-2xl bg-neutral-50 border border-neutral-200 space-y-3">
+                        <ImageUploader 
+                          value={editGeneral.logo || "https://i.postimg.cc/mg37tmcB/logo.png"}
+                          onChange={(url) => setEditGeneral({ ...editGeneral, logo: url })}
+                          label="Website Emblem / Corporate Logo"
+                          acceptType="image"
+                          helperText="Official company emblem displayed in sticky navbar and footer"
+                        />
+                      </div>
+
+                      <div className="p-4 rounded-2xl bg-neutral-50 border border-neutral-200 space-y-3">
+                        <ImageUploader 
+                          value={editGeneral.favicon || ""}
+                          onChange={(url) => setEditGeneral({ ...editGeneral, favicon: url })}
+                          label="Browser Tab Favicon"
+                          acceptType="image"
+                          helperText="Small 32x32 or 64x64 icon displayed in browser tab"
+                        />
+                      </div>
+                    </div>
                   </div>
 
                   <div className="border-t border-neutral-100 pt-6 space-y-6">
                     <h3 className="font-serif text-md font-bold text-neutral-900 flex items-center gap-2 border-b border-neutral-100 pb-3">
-                      <Layers className="w-4 h-4 text-[#00a757]" /> 2. Homepage Hero Section Text
+                      <Layers className="w-4 h-4 text-[#00a757]" /> 2. Homepage Hero Section & Header Imagery
                     </h3>
 
                     <div>
@@ -2334,6 +2395,16 @@ export default function Admin({
                         value={editGeneral.heroSubtitle || ''}
                         onChange={(e) => setEditGeneral({ ...editGeneral, heroSubtitle: e.target.value })}
                         className="w-full p-3.5 rounded-xl border border-neutral-200 focus:ring-2 focus:ring-[#00a757] focus:outline-none text-xs font-medium leading-relaxed"
+                      />
+                    </div>
+
+                    <div className="p-4 rounded-2xl bg-neutral-50 border border-neutral-200 space-y-3">
+                      <ImageUploader 
+                        value={editGeneral.heroBg || ""}
+                        onChange={(url) => setEditGeneral({ ...editGeneral, heroBg: url })}
+                        label="Homepage Hero Background Banner"
+                        acceptType="image"
+                        helperText="Panoramic high-resolution photo for the top hero banner"
                       />
                     </div>
                   </div>
@@ -3133,6 +3204,16 @@ export default function Admin({
                       />
                     </div>
 
+                    <div className="p-4 rounded-2xl bg-neutral-50 border border-neutral-200 space-y-3">
+                      <ImageUploader 
+                        value={selectedJob.documentUrl || selectedJob.image || ''}
+                        onChange={(url) => setSelectedJob({ ...selectedJob, documentUrl: url, image: url })}
+                        label="Job Specification Document / Flyer / JD Pack (PDF or Image)"
+                        acceptType="all"
+                        helperText="Upload official JD PDF, brochure, or recruitment flyer"
+                      />
+                    </div>
+
                     <div className="pt-4 border-t border-neutral-100 flex justify-end gap-3">
                       <button 
                         type="button" 
@@ -3310,13 +3391,14 @@ export default function Admin({
                             <th className="p-4 rounded-l-lg">Sender / Date</th>
                             <th className="p-4">Message / Request</th>
                             <th className="p-4">Sector interest</th>
-                            <th className="p-4 rounded-r-lg text-right">Inquiry Channel</th>
+                            <th className="p-4 text-center">Inquiry Channel</th>
+                            <th className="p-4 rounded-r-lg text-right">Action</th>
                           </tr>
                         </thead>
                         <tbody className="divide-y divide-neutral-100">
                           {db.inquiries.length === 0 ? (
                             <tr>
-                              <td colSpan={4} className="p-8 text-center text-xs text-neutral-400 font-light">
+                              <td colSpan={5} className="p-8 text-center text-xs text-neutral-400 font-light">
                                 No inbound inquiries currently received in database.
                               </td>
                             </tr>
@@ -3337,10 +3419,20 @@ export default function Admin({
                                     {inq.sectorOfInterest || 'Unspecified'}
                                   </span>
                                 </td>
-                                <td className="p-4 text-right">
+                                <td className="p-4 text-center">
                                   <span className="bg-[#00a757]/10 text-[#00a757] text-[9px] font-black uppercase tracking-widest px-2.5 py-1 rounded-full font-mono">
                                     {inq.type}
                                   </span>
+                                </td>
+                                <td className="p-4 text-right">
+                                  <button
+                                    type="button"
+                                    onClick={() => handleDeleteInquiry(inq.id)}
+                                    className="p-2 rounded-lg border border-red-200 bg-red-50 hover:bg-red-100 text-red-600 transition-colors cursor-pointer"
+                                    title="Delete inquiry"
+                                  >
+                                    <Trash2 className="w-3.5 h-3.5" />
+                                  </button>
                                 </td>
                               </tr>
                             ))
@@ -3892,6 +3984,16 @@ export default function Admin({
                       />
                     </div>
 
+                    <div className="p-4 rounded-2xl bg-neutral-50 border border-neutral-200 space-y-3">
+                      <ImageUploader 
+                        value={selectedMilestone.image || ''}
+                        onChange={(url) => setSelectedMilestone({ ...selectedMilestone, image: url })}
+                        label="Archival Photograph / Historic Event Image"
+                        acceptType="image"
+                        helperText="Historical image, official signing ceremony photo, or landmark picture"
+                      />
+                    </div>
+
                     <div className="pt-4 border-t border-neutral-100 flex justify-end gap-3">
                       <button 
                         type="button" 
@@ -4016,14 +4118,13 @@ export default function Admin({
                       </div>
                     </div>
 
-                    <div>
-                      <label className="block text-[10px] font-black uppercase text-neutral-500 mb-1.5 font-mono">State Logo / Crest Image URL</label>
-                      <input 
-                        type="url" 
+                    <div className="p-4 rounded-2xl bg-neutral-50 border border-neutral-200 space-y-3">
+                      <ImageUploader 
                         value={selectedStateCMS.logo || ''}
-                        onChange={(e) => setSelectedStateCMS({ ...selectedStateCMS, logo: e.target.value })}
-                        placeholder="https://..."
-                        className="w-full p-3.5 rounded-xl border border-neutral-200 focus:ring-2 focus:ring-[#00a757] focus:outline-none text-xs font-mono text-neutral-900"
+                        onChange={(url) => setSelectedStateCMS({ ...selectedStateCMS, logo: url })}
+                        label="Official State Government Crest / Logo"
+                        acceptType="image"
+                        helperText="Upload official state seal or coat of arms"
                       />
                     </div>
 
@@ -4306,6 +4407,28 @@ export default function Admin({
                       />
                     </div>
 
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div className="p-4 rounded-2xl bg-neutral-50 border border-neutral-200 space-y-3">
+                        <ImageUploader 
+                          value={selectedSubsidiary.logo || ''}
+                          onChange={(url) => setSelectedSubsidiary({ ...selectedSubsidiary, logo: url })}
+                          label="Subsidiary Company Logo"
+                          acceptType="image"
+                          helperText="Official company logo or brand crest"
+                        />
+                      </div>
+
+                      <div className="p-4 rounded-2xl bg-neutral-50 border border-neutral-200 space-y-3">
+                        <ImageUploader 
+                          value={selectedSubsidiary.image || ''}
+                          onChange={(url) => setSelectedSubsidiary({ ...selectedSubsidiary, image: url })}
+                          label="Landmark / Key Property Photo"
+                          acceptType="image"
+                          helperText="Photo of flagship building, farm, or operational facility"
+                        />
+                      </div>
+                    </div>
+
                     <div className="pt-4 border-t border-neutral-100 flex justify-end gap-3">
                       <button 
                         type="button" 
@@ -4495,6 +4618,16 @@ export default function Admin({
                       />
                     </div>
 
+                    <div className="p-4 rounded-2xl bg-neutral-50 border border-neutral-200 space-y-3">
+                      <ImageUploader 
+                        value={selectedProgram.image || ''}
+                        onChange={(url) => setSelectedProgram({ ...selectedProgram, image: url })}
+                        label="Foundation Program Photo / Outreach Event Image"
+                        acceptType="image"
+                        helperText="Beneficiaries, graduation ceremony, or youth outreach photo"
+                      />
+                    </div>
+
                     <div className="pt-4 border-t border-neutral-100 flex justify-end gap-3">
                       <button 
                         type="button" 
@@ -4666,14 +4799,13 @@ export default function Admin({
                       </div>
                     </div>
 
-                    <div>
-                      <label className="block text-[10px] font-black uppercase text-neutral-500 mb-1.5 font-mono">Downloadable PDF Charter Document URL</label>
-                      <input 
-                        type="text" 
+                    <div className="p-4 rounded-2xl bg-neutral-50 border border-neutral-200 space-y-3">
+                      <ImageUploader 
                         value={selectedPolicy.pdfUrl || ''}
-                        onChange={(e) => setSelectedPolicy({ ...selectedPolicy, pdfUrl: e.target.value })}
-                        placeholder="https://oduainvestment.com.ng/charters/board-charter-2026.pdf"
-                        className="w-full p-3.5 rounded-xl border border-neutral-200 focus:ring-2 focus:ring-[#00a757] focus:outline-none text-xs font-mono text-neutral-900"
+                        onChange={(url) => setSelectedPolicy({ ...selectedPolicy, pdfUrl: url })}
+                        label="Downloadable PDF Charter Document"
+                        acceptType="document"
+                        helperText="Upload official board charter PDF, compliance manual, or code of conduct"
                       />
                     </div>
 
@@ -4837,6 +4969,15 @@ export default function Admin({
                               Mark Resolved
                             </button>
                           </div>
+
+                          <button
+                            type="button"
+                            onClick={() => handleDeleteWhistleblower(report.id)}
+                            className="px-3 py-1.5 rounded-lg border border-red-200 bg-red-50 hover:bg-red-100 text-red-600 font-bold text-[11px] transition-colors flex items-center gap-1.5 cursor-pointer"
+                          >
+                            <Trash2 className="w-3.5 h-3.5" />
+                            <span>Delete Report</span>
+                          </button>
                         </div>
                       </div>
                     ))
@@ -5372,15 +5513,13 @@ export default function Admin({
                       </div>
                     </div>
 
-                    <div>
-                      <label className="block text-[10px] font-black uppercase text-neutral-500 mb-1.5 font-mono">Direct Download URL *</label>
-                      <input 
-                        type="text" 
-                        required 
-                        value={selectedDownload.fileUrl}
-                        onChange={(e) => setSelectedDownload({ ...selectedDownload, fileUrl: e.target.value })}
-                        placeholder="https://oduainvestment.com.ng/downloads/annual-report-2025.pdf"
-                        className="w-full p-3.5 rounded-xl border border-neutral-200 focus:ring-2 focus:ring-[#00a757] focus:outline-none text-xs font-mono text-neutral-900"
+                    <div className="p-4 rounded-2xl bg-neutral-50 border border-neutral-200 space-y-3">
+                      <ImageUploader 
+                        value={selectedDownload.fileUrl || ''}
+                        onChange={(url) => setSelectedDownload({ ...selectedDownload, fileUrl: url })}
+                        label="Upload Document / Report File (PDF, DOC, ZIP, Image)"
+                        acceptType="all"
+                        helperText="Upload official PDF file or enter external cloud storage download link"
                       />
                     </div>
 

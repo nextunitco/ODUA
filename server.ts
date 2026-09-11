@@ -387,8 +387,8 @@ async function startServer() {
   const PORT = 3000;
 
   // Middlewares to parse bodies
-  app.use(express.json({ limit: '10mb' }));
-  app.use(express.urlencoded({ extended: true, limit: '10mb' }));
+  app.use(express.json({ limit: '50mb' }));
+  app.use(express.urlencoded({ extended: true, limit: '50mb' }));
 
   // Health check endpoint
   app.get('/api/health', (req, res) => {
@@ -1911,6 +1911,32 @@ Return strictly JSON:
     }
   });
 
+  // Delete an inquiry from inbox
+  app.delete('/api/content/inquiries/:id', (req, res) => {
+    const db = readDatabase();
+    const id = req.params.id;
+    db.inquiries = (db.inquiries || []).filter((inq: any) => String(inq.id) !== String(id));
+    const success = writeDatabase(db);
+    if (success) {
+      res.json({ success: true, message: 'Inquiry deleted' });
+    } else {
+      res.status(500).json({ success: false, message: 'Failed to delete inquiry' });
+    }
+  });
+
+  // Delete whistleblower report
+  app.delete('/api/content/whistleblower/:id', (req, res) => {
+    const db = readDatabase();
+    const id = req.params.id;
+    db.whistleblowerReports = (db.whistleblowerReports || []).filter((rep: any) => String(rep.id) !== String(id));
+    const success = writeDatabase(db);
+    if (success) {
+      res.json({ success: true, message: 'Report deleted' });
+    } else {
+      res.status(500).json({ success: false, message: 'Failed to delete report' });
+    }
+  });
+
   // Get dynamic visitor stats (mocked with realistic values for standard administrative reporting)
   app.get('/api/stats', (req, res) => {
     const db = readDatabase();
@@ -1927,9 +1953,60 @@ Return strictly JSON:
   });
 
   // Serve uploaded files statically
-  app.use('/uploads', express.static(path.join(process.cwd(), 'uploads')));
+  const uploadDir = path.join(process.cwd(), 'uploads');
+  if (!fs.existsSync(uploadDir)) {
+    fs.mkdirSync(uploadDir, { recursive: true });
+  }
+  app.use('/uploads', express.static(uploadDir));
 
-  // Lightweight base64 image upload API
+  // Get list of all uploaded files on the server
+  app.get('/api/uploads', (req, res) => {
+    try {
+      if (!fs.existsSync(uploadDir)) {
+        return res.json({ success: true, files: [] });
+      }
+      const fileNames = fs.readdirSync(uploadDir);
+      const files = fileNames
+        .filter(name => !name.startsWith('.'))
+        .map(fileName => {
+          const filePath = path.join(uploadDir, fileName);
+          const stats = fs.statSync(filePath);
+          const sizeKb = Math.round(stats.size / 1024);
+          const sizeStr = sizeKb > 1024 ? `${(sizeKb / 1024).toFixed(1)} MB` : `${sizeKb} KB`;
+          return {
+            filename: fileName,
+            url: `/uploads/${fileName}`,
+            size: sizeStr,
+            bytes: stats.size,
+            date: stats.mtime.toISOString().split('T')[0]
+          };
+        })
+        .sort((a, b) => b.filename.localeCompare(a.filename));
+
+      res.json({ success: true, files });
+    } catch (error: any) {
+      console.error('Error listing uploads:', error);
+      res.status(500).json({ success: false, message: error.message || 'Failed to list uploads' });
+    }
+  });
+
+  // Delete uploaded file from server
+  app.delete('/api/uploads/:filename', (req, res) => {
+    try {
+      const fileName = path.basename(req.params.filename);
+      const filePath = path.join(uploadDir, fileName);
+      if (fs.existsSync(filePath)) {
+        fs.unlinkSync(filePath);
+        return res.json({ success: true, message: 'File deleted successfully' });
+      }
+      res.status(404).json({ success: false, message: 'File not found' });
+    } catch (error: any) {
+      console.error('Error deleting file:', error);
+      res.status(500).json({ success: false, message: error.message || 'Failed to delete file' });
+    }
+  });
+
+  // Robust base64 file upload API (supports images, documents, PDFs up to 50MB)
   app.post('/api/upload', (req, res) => {
     try {
       const { name, data } = req.body;
@@ -1937,8 +2014,6 @@ Return strictly JSON:
         return res.status(400).json({ success: false, message: 'Name and base64 data are required' });
       }
 
-      // Create uploads directory if it doesn't exist
-      const uploadDir = path.join(process.cwd(), 'uploads');
       if (!fs.existsSync(uploadDir)) {
         fs.mkdirSync(uploadDir, { recursive: true });
       }
@@ -1953,13 +2028,23 @@ Return strictly JSON:
 
       // Sanitise and generate unique filename
       const fileExt = path.extname(name) || '.png';
-      const baseName = path.basename(name, fileExt).replace(/[^a-zA-Z0-9]/g, '_');
+      const baseName = path.basename(name, fileExt).replace(/[^a-zA-Z0-9_-]/g, '_');
       const fileName = `${baseName}_${Date.now()}${fileExt}`;
       const filePath = path.join(uploadDir, fileName);
 
       fs.writeFileSync(filePath, buffer);
 
-      res.json({ success: true, url: `/uploads/${fileName}` });
+      const sizeKb = Math.round(buffer.length / 1024);
+      const sizeStr = sizeKb > 1024 ? `${(sizeKb / 1024).toFixed(1)} MB` : `${sizeKb} KB`;
+
+      res.json({ 
+        success: true, 
+        url: `/uploads/${fileName}`,
+        name: fileName,
+        originalName: name,
+        size: sizeStr,
+        bytes: buffer.length
+      });
     } catch (error: any) {
       console.error('Error writing uploaded file:', error);
       res.status(500).json({ success: false, message: error.message || 'Failed to save file' });

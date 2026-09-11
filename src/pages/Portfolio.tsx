@@ -21,6 +21,8 @@ import {
   Sparkles,
   Search,
   Briefcase,
+  ExternalLink,
+  Globe,
   X
 } from 'lucide-react';
 import { SectorDetail } from '../types';
@@ -70,7 +72,9 @@ export default function Portfolio({
       origin: "Formerly Nabani Estates Limited, incorporated in Sept 1962 as a subsidiary of National Bank of Nigeria. Acquired by Western Nigeria Marketing Board (becoming Wemabod) and integrated into Odu'a in 1976.",
       desc: "One of Nigeria's premier real estate development and asset management firms, coordinating celebration-scale high-rises and residential estates.",
       features: ["Assets under management: N65B+", "1.2M+ sqm premium commercial real estate", "Iconic landmarks like Cocoa House and Sovereign Heights Ikoyi"],
-      logoText: "WL"
+      logoText: "WL",
+      logo: "https://wemabod.com/wp-content/uploads/2021/04/wemabod-logo.png",
+      website: "https://wemabod.com"
     },
     {
       name: "Cocoa Industries Limited",
@@ -78,7 +82,8 @@ export default function Portfolio({
       origin: "Incorporated as a private Limited Liability Company on August 28, 1965; commenced operations in 1967.",
       desc: "An industrial-scale cocoa processor specializing in producing and distributing high-yield cocoa butter, cake, powder, and cocoa-based consumer beverages.",
       features: ["Pioneer in regional cocoa-based beverage processing", "Premium export-grade butter and cocoa cake production", "Located in the Ikeja industrial corridor"],
-      logoText: "CI"
+      logoText: "CI",
+      website: "https://oduainvestment.com.ng/portfolio"
     },
     {
       name: "Glanvill Enthoven Insurance Brokers",
@@ -86,7 +91,9 @@ export default function Portfolio({
       origin: "Established in Nigeria in 1957 as a pioneer firm of incorporated insurance and reinsurance brokers.",
       desc: "Pensions consultants and risk brokers licensed by NAICOM and registered with the NCRIB, supplying robust corporate security and risk management.",
       features: ["Over 65 years of risk brokerage excellence", "Comprehensive corporate reinsurance programs", "NCRIB registered pensions consultants"],
-      logoText: "GE"
+      logoText: "GE",
+      logo: "https://glanvillenthoven.com.ng/wp-content/uploads/2021/06/glanvill-logo.png",
+      website: "https://glanvillenthoven.com.ng"
     },
     {
       name: "Lagos Airport Hotel Limited",
@@ -94,7 +101,9 @@ export default function Portfolio({
       origin: "Founded in 1942, serving as Nigeria's foremost and oldest indigenous grand hospitality venue.",
       desc: "A celebrated member of the Odu'a Group, recently repositioned with extensive room refurbishments, modern facilities, and a grand luxury service standard.",
       features: ["Over 80 years of premium hospitality heritage", "Newly refurbished Olympic-size swimming pools and banquet halls", "Strategic executive transit hub near Ikeja Airport"],
-      logoText: "LA"
+      logoText: "LA",
+      logo: "https://lagosairporthotel.com.ng/wp-content/uploads/2021/08/lah-logo.png",
+      website: "https://lagosairporthotel.com.ng"
     },
     {
       name: "Western Hotels (Premier & Lafia Hotels)",
@@ -102,7 +111,9 @@ export default function Portfolio({
       origin: "Comprising Premier Hotel atop Mokola Hill and Lafia Hotel, Apata, Ibadan. Roots dating back to the early 1960s.",
       desc: "Renowned hotels representing the peak of Southwest cultural tourism, banquet setups, and serene hills-side accommodation.",
       features: ["Historic landmarks of Oyo State's political and tourist legacy", "Active refurbishment programs to deliver standard 4-star experiences", "Host to state cabinet dinners and high-profile regional congresses"],
-      logoText: "WH"
+      logoText: "WH",
+      logo: "https://premierhotelibadan.com/wp-content/uploads/2020/07/logo.png",
+      website: "https://premierhotelibadan.com"
     },
     {
       name: "E&O Power and Equipment Leasing Limited",
@@ -110,7 +121,8 @@ export default function Portfolio({
       origin: "Incorporated in 2005, with full industrial operations launched in 2006.",
       desc: "An engineering leader focused on the sales, leasing, and preventative maintenance of heavy-duty backup generators and electricity transformers.",
       features: ["Signed maintenance contracts with prominent multinationals", "Fleet lease options for critical industrial operations", "Rapid-response emergency repair engineers on-call 24/7"],
-      logoText: "EO"
+      logoText: "EO",
+      website: "https://oduainvestment.com.ng/portfolio"
     },
     {
       name: "Westlink Integrated Agriculture Limited (WIAL)",
@@ -127,7 +139,18 @@ export default function Portfolio({
         phone: "08111896184",
         address: "Floors 20-23, Cocoa House, Ibadan"
       },
-      logoText: "WI"
+      logoText: "WI",
+      logo: "https://swagco.ng/wp-content/uploads/2021/05/swagco-logo.png",
+      website: "https://swagco.ng"
+    },
+    {
+      name: "South-West Innovation & Technology (SWIT)",
+      category: "Engineering Services",
+      origin: "Established in 2022 to incubate technology transformation across the 6 Southwest Nigerian states.",
+      desc: "Propelling enterprise cloud systems, digital government automation, and smart agro-logistics trace engines for Odu'a subsidiaries and external clients.",
+      features: ["Enterprise ERP core architecture", "Regional university tech incubator hubs", "Real-time agro-supply chain traceability"],
+      logoText: "SWIT",
+      website: "https://swit.odua.ng"
     }
   ];
 

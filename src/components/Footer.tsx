@@ -89,9 +89,9 @@ export default function Footer({
             {/* Col 1: Group Identity & Cocoa House Card */}
             <div className="space-y-4">
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-lg p-1.5 ring-2 ring-[#fce303]/30">
+                <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white rounded-2xl flex items-center justify-center shadow-xl p-2 ring-2 ring-[#fce303]/50">
                   <img 
-                    src="https://i.postimg.cc/mg37tmcB/logo.png" 
+                    src={activeGeneralSettings?.logo || "https://i.postimg.cc/mg37tmcB/logo.png"} 
                     alt="Odu'a Logo" 
                     className="w-full h-full object-contain"
                     referrerPolicy="no-referrer"
@@ -324,13 +324,15 @@ export default function Footer({
           {/* Middle Nav Row */}
           <div className="flex flex-wrap items-center justify-between gap-6 pt-2">
             <div className="flex items-center gap-3">
-              <img 
-                src="https://i.postimg.cc/mg37tmcB/logo.png" 
-                alt="Odu'a Logo" 
-                className="w-8 h-8 object-contain"
-                referrerPolicy="no-referrer"
-              />
-              <span className="font-serif font-bold text-white tracking-wider text-base">
+              <div className="w-12 h-12 sm:w-14 sm:h-14 bg-white rounded-xl flex items-center justify-center p-1.5 shadow-md ring-1 ring-amber-400/30">
+                <img 
+                  src={activeGeneralSettings?.logo || "https://i.postimg.cc/mg37tmcB/logo.png"} 
+                  alt="Odu'a Logo" 
+                  className="w-full h-full object-contain"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
+              <span className="font-serif font-bold text-white tracking-wider text-base sm:text-lg">
                 ODU'A INVESTMENT COMPANY
               </span>
             </div>
@@ -393,9 +395,9 @@ export default function Footer({
             
             {/* Col 1: Identity & Sovereign Trust */}
             <div className="lg:col-span-1 space-y-4">
-              <div className="flex items-center gap-2.5">
-                <div className="w-10 h-10 bg-white rounded-lg p-1 flex items-center justify-center">
-                  <img src="https://i.postimg.cc/mg37tmcB/logo.png" alt="Odu'a" className="w-full h-full object-contain" referrerPolicy="no-referrer" />
+              <div className="flex items-center gap-3">
+                <div className="w-14 h-14 sm:w-16 sm:h-16 bg-white rounded-xl p-1.5 flex items-center justify-center shadow-lg ring-1 ring-amber-400/30">
+                  <img src={activeGeneralSettings?.logo || "https://i.postimg.cc/mg37tmcB/logo.png"} alt="Odu'a" className="w-full h-full object-contain" referrerPolicy="no-referrer" />
                 </div>
                 <div>
                   <h4 className="font-serif font-black text-white text-base leading-none">ODU'A</h4>
@@ -496,9 +498,9 @@ export default function Footer({
             {/* Bento Card 1: Brand & Cocoa House Hero (Spans 2 cols on Desktop) */}
             <div className="lg:col-span-2 p-6 rounded-3xl bg-neutral-900/90 border border-neutral-800 flex flex-col justify-between space-y-4 hover:border-neutral-700 transition-all shadow-sm">
               <div className="space-y-3">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-white rounded-xl p-1 flex items-center justify-center">
-                    <img src="https://i.postimg.cc/mg37tmcB/logo.png" alt="Odu'a Logo" className="w-full h-full object-contain" referrerPolicy="no-referrer" />
+                <div className="flex items-center gap-3.5">
+                  <div className="w-16 h-16 sm:w-18 sm:h-18 bg-white rounded-2xl p-2 flex items-center justify-center shadow-xl ring-2 ring-amber-400/30">
+                    <img src={activeGeneralSettings?.logo || "https://i.postimg.cc/mg37tmcB/logo.png"} alt="Odu'a Logo" className="w-full h-full object-contain" referrerPolicy="no-referrer" />
                   </div>
                   <div>
                     <h4 className="font-serif font-black text-xl text-white">ODU'A INVESTMENT</h4>
@@ -622,10 +624,10 @@ export default function Footer({
           
           {/* Column 1: Bio & Socials */}
           <div className="space-y-5">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center shadow p-1">
+            <div className="flex items-center gap-3.5">
+              <div className="w-14 h-14 sm:w-16 sm:h-16 bg-white rounded-2xl flex items-center justify-center shadow-lg p-1.5 ring-2 ring-amber-400/30">
                 <img 
-                  src="https://i.postimg.cc/mg37tmcB/logo.png" 
+                  src={activeGeneralSettings?.logo || "https://i.postimg.cc/mg37tmcB/logo.png"} 
                   alt="Odu'a Logo" 
                   className="w-full h-full object-contain"
                   referrerPolicy="no-referrer"

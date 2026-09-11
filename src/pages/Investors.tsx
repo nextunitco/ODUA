@@ -258,53 +258,67 @@ export default function Investors({
                       <p className="text-neutral-500 text-xs font-light">{section.desc}</p>
                     </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
                       {section.members.map((member, idx) => (
                         <div 
                           key={idx}
                           onClick={() => member.bioPage && onNavigate(member.bioPage)}
-                          className={`bg-white rounded-3xl p-5 border border-neutral-200/80 shadow-sm transition-all duration-300 group flex items-start gap-4 ${
+                          className={`bg-white rounded-3xl overflow-hidden border border-neutral-200/90 shadow-sm transition-all duration-300 group flex flex-col ${
                             member.bioPage 
-                              ? 'cursor-pointer hover:shadow-md hover:border-neutral-300/80 hover:scale-101' 
+                              ? 'cursor-pointer hover:shadow-xl hover:border-emerald-500/50 hover:-translate-y-1' 
                               : ''
                           }`}
                         >
-                          {/* Profile Image with Referrer Policy */}
-                          <div className="w-16 h-16 rounded-2xl bg-neutral-100 overflow-hidden shrink-0 border border-neutral-200/50 relative shadow-inner">
+                          {/* Large Prominent Executive Portrait Image */}
+                          <div className="w-full h-64 sm:h-72 bg-gradient-to-b from-neutral-100 to-neutral-200 overflow-hidden relative border-b border-neutral-100">
                             {member.image ? (
                               <img 
                                 src={member.image} 
                                 alt={member.name}
-                                className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-110"
+                                className="w-full h-full object-cover object-top filter brightness-[1.02] contrast-[1.02] transition-transform duration-500 group-hover:scale-105"
                                 referrerPolicy="no-referrer"
+                                onError={(e) => {
+                                  e.currentTarget.style.display = 'none';
+                                  const fallback = e.currentTarget.parentElement?.querySelector('.fallback-initials') as HTMLElement | null;
+                                  if (fallback) fallback.style.display = 'flex';
+                                }}
                               />
-                            ) : (
-                              <div className="w-full h-full flex items-center justify-center bg-neutral-200 font-bold text-neutral-700 text-sm">
-                                {member.initials}
-                              </div>
-                            )}
+                            ) : null}
+                            <div 
+                              className={`fallback-initials w-full h-full ${member.image ? 'hidden' : 'flex'} items-center justify-center bg-gradient-to-br from-[#00a757] via-emerald-800 to-neutral-900 font-serif font-bold text-white text-4xl shadow-inner`}
+                            >
+                              {member.initials}
+                            </div>
+                            
+                            {/* Role Badge pinned neatly to top right */}
+                            <div className="absolute top-3 right-3 z-10">
+                              <span className={`inline-flex items-center text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full shadow-md backdrop-blur-md ${
+                                member.role === 'Chairman' 
+                                  ? 'bg-[#00a757] text-white ring-2 ring-white/30' 
+                                  : 'bg-neutral-900/85 text-white ring-1 ring-white/20'
+                              }`}>
+                                {member.role}
+                              </span>
+                            </div>
                           </div>
 
-                          <div className="flex-1 text-left min-w-0">
-                            <span className={`inline-block text-[9px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-full mb-1 ${
-                              member.role === 'Chairman' 
-                                ? 'bg-[#00a757]/10 text-[#00a757]' 
-                                : 'bg-neutral-100 text-neutral-500'
-                            }`}>
-                              {member.role}
-                            </span>
-                            <h4 className="font-serif text-sm font-bold text-neutral-900 group-hover:text-[#00a757] transition-colors leading-tight truncate">
-                              {member.name}
-                            </h4>
-                            <p className="text-[10px] text-neutral-500 font-light mt-0.5 leading-snug">
-                              {member.designation}
-                            </p>
+                          <div className="p-5 sm:p-6 flex-1 flex flex-col justify-between text-left bg-white">
+                            <div>
+                              <h4 className="font-serif text-base sm:text-lg font-bold text-neutral-900 group-hover:text-[#00a757] transition-colors leading-snug">
+                                {member.name}
+                              </h4>
+                              <p className="text-xs text-neutral-600 font-medium mt-1 leading-relaxed">
+                                {member.designation}
+                              </p>
+                            </div>
 
                             {member.bioPage && (
-                              <span className="inline-flex items-center gap-1 text-[9px] font-bold text-[#00a757] mt-3 group-hover:translate-x-1 transition-transform">
-                                <span>View Biography</span>
-                                <ChevronRight className="w-2.5 h-2.5" />
-                              </span>
+                              <div className="pt-4 mt-4 border-t border-neutral-100 flex items-center justify-between">
+                                <span className="inline-flex items-center gap-1.5 text-xs font-bold text-[#00a757] group-hover:translate-x-1 transition-transform">
+                                  <span>View Executive Biography</span>
+                                  <ChevronRight className="w-3.5 h-3.5" />
+                                </span>
+                              </div>
                             )}
                           </div>
                         </div>

@@ -56,7 +56,10 @@ export default function Home({
   const topNews = news.slice(0, 3);
 
   // Dynamic Content variables from pageContent / generalSettings
-  const activeHeroBanner = pageContent?.bannerImage || HERO_BACKGROUNDS.home || cocoaHouseImg;
+  // Prioritize official Wikipedia Cocoa House image for hero background
+  const rawBanner = pageContent?.bannerImage;
+  const isBlurryBanner = !rawBanner || rawBanner.includes('gj0gKfZ7');
+  const activeHeroBanner = (!isBlurryBanner && rawBanner) ? rawBanner : HERO_BACKGROUNDS.home;
   const activeHeroTitle = (pageContent?.heroTitle && !pageContent.heroTitle.includes('Pioneering')) 
     ? pageContent.heroTitle 
     : (generalSettings?.heroTitle && !generalSettings.heroTitle.includes('Pioneering'))
@@ -68,7 +71,6 @@ export default function Home({
     : (generalSettings?.heroSubtitle && !generalSettings.heroSubtitle.includes('Pioneering'))
     ? generalSettings.heroSubtitle
     : "Through strategic investments and efficient management of our diversified portfolio, we are enhancing our rich legacy and unlocking new opportunities that will thrive for generations to come.";
-  const activeHeroBadge = "";
   const activePrimaryBtn = "Learn More";
   const activeSecondaryBtn = "";
 
@@ -130,48 +132,38 @@ export default function Home({
       className="flex-1 flex flex-col"
     >
       {/* HERO SECTION WITH COCOA HOUSE AND CENTERED TEXT OVERLAYS */}
-      <section className="relative min-h-[75vh] md:min-h-[84vh] flex flex-col justify-center items-center overflow-hidden">
+      <section className="relative min-h-[90vh] md:min-h-[96vh] flex flex-col justify-start sm:justify-center items-center overflow-hidden pt-40 sm:pt-48 md:pt-52 lg:pt-56 pb-24 sm:pb-32">
         
-        {/* Dynamic Cityscape & Cocoa House Background Image */}
-        <div className="absolute inset-0 z-0">
+        {/* Dynamic Cityscape & Cocoa House Background Image (Wikipedia Official Cocoa House, Ibadan) */}
+        <div className="absolute inset-0 z-0 overflow-hidden bg-neutral-950">
           <motion.img 
-            initial={{ scale: 1.08, opacity: 0 }}
-            animate={{ scale: 1, opacity: 0.98 }}
-            transition={{ duration: 1.4, ease: "easeOut" }}
+            initial={{ scale: 1.02, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
             src={activeHeroBanner} 
-            alt="Odu'a Investment Corporate Heritage and Cocoa House Cityscape" 
-            className="w-full h-full object-cover object-center filter saturate-110 brightness-[0.92] contrast-105"
+            alt="Cocoa House Skyscraper Ibadan - Historic Headquarters of Odu'a Investment" 
+            className="w-full h-full object-cover object-center transform-gpu will-change-transform"
             onError={(e) => {
-              e.currentTarget.src = "https://i.postimg.cc/gj0gKfZ7/cocoa-house.jpg";
+              e.currentTarget.src = "/uploads/cocoa_house_wikipedia.jpg";
             }}
             referrerPolicy="no-referrer"
           />
           {/* Executive Vignette Backdrop Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-b from-neutral-950/70 via-neutral-950/40 to-neutral-950/80" />
-          <div className="absolute inset-0 bg-black/15" />
+          <div className="absolute inset-0 bg-gradient-to-b from-neutral-950/75 via-neutral-950/40 to-neutral-950/85 pointer-events-none" />
+          <div className="absolute inset-0 bg-black/20 pointer-events-none" />
         </div>
 
         {/* Decorative Grid overlay for subtle architectural texture */}
         <div className="absolute inset-0 z-1 opacity-[0.03] bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:3rem_3rem] pointer-events-none" />
 
-        {/* Centered Main Hero Content */}
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center py-16 sm:py-24 my-auto flex flex-col items-center justify-center">
+        {/* Centered Main Hero Content - Positioned generously below fixed navbar */}
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center flex flex-col items-center justify-center w-full mt-2 sm:mt-6 md:mt-8">
           <motion.div 
             variants={containerVariants}
             initial="hidden"
             animate="show"
             className="space-y-5 sm:space-y-6 flex flex-col items-center text-center"
           >
-            
-            {/* Prestigious Eyebrow Badge */}
-            <motion.div 
-              variants={itemVariants}
-              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-md text-[11px] font-bold uppercase tracking-[0.2em] text-emerald-300 shadow-xs"
-            >
-              <Sparkles className="w-3.5 h-3.5 text-amber-300" />
-              <span>{activeHeroBadge || "Est. 1976 • Sovereign Investment Conglomerate"}</span>
-            </motion.div>
-
             {/* Refined Commanding Headline */}
             <motion.h1 
               variants={itemVariants}

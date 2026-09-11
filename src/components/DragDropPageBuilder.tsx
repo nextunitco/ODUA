@@ -86,7 +86,7 @@ export const BLOCK_LIBRARY_PRESETS: Array<{
       badge: 'The Engine Room of Southwest Nigeria',
       title: 'Enhancing the legacy for future generations',
       subtitle: 'Through strategic investments and efficient management of our diversified portfolio, we unlock new opportunities across Southwest Nigeria.',
-      bannerImage: 'https://i.postimg.cc/gj0gKfZ7/cocoa-house.jpg',
+      bannerImage: '/uploads/cocoa_house_sharp.jpg',
       primaryBtnText: 'Explore Portfolio',
       primaryBtnLink: 'Portfolio',
       secondaryBtnText: 'Co-Invest with Us',

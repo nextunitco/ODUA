@@ -44,33 +44,33 @@ export interface MuseumPhoto {
 export const MUSEUM_PHOTOS: MuseumPhoto[] = [
   {
     id: 1,
-    url: 'https://i.postimg.cc/6qjfZqtr/Whats-App-Image-2026-09-10-at-09-18-44.jpg',
-    title: 'Main Exhibition Gallery & Central Gourd Art Sculpture',
+    url: 'https://i.postimg.cc/wvbwK8k4/Whats-App-Image-2026-09-10-at-09-18-44.jpg',
+    title: 'Grand Entrance Gallery & Cultural Antiquities Corridor',
     category: 'gallery-overview',
     categoryLabel: 'Main Gallery',
     locationInMuseum: 'Cocoa House 24th Floor — Central Exhibition Hall',
     era: 'Contemporary Heritage Architecture',
-    caption: 'A wide-angle view of the main exhibition gallery featuring wooden flooring, a bamboo ceiling, wall-mounted historical panels, angled document counters, and a central gourd art sculpture standing in the middle of the hall.',
+    caption: 'A wide-angle view of the main exhibition gallery featuring wooden floorboards, a woven bamboo ceiling, wall-mounted historical panels, angled display counters, and a central gourd art sculpture standing in the middle of the hall.',
     curatorNote: 'This main hall welcomes visitors with an organic architectural ambiance combining warm hardwood flooring and handcrafted bamboo ceiling lattices. Surrounding angled reading counters and wall panels guide visitors through the historical arc of Yoruba civilization around a magnificent central gourd art monument.',
     highlights: [
-      'Artisanal bamboo ceiling lattice and polished wooden flooring',
+      'Artisanal bamboo ceiling lattice and polished wooden floorboards',
       'Monumental carved central gourd art sculpture',
-      'Wall-mounted historical documentary panels & reading ledges',
+      'Wall-mounted historical documentary panels & angled display counters',
       'Spacious chronological layout on Cocoa House 24th floor'
     ]
   },
   {
     id: 2,
-    url: 'https://i.postimg.cc/fy2fdyDx/Whats-App-Image-2026-09-10-at-09-18-47.jpg',
-    title: 'Yoruba Peace Treaty (1886) & Warfare Implements',
+    url: 'https://i.postimg.cc/Y9ydcKxs/Whats-App-Image-2026-09-10-at-09-18-47.jpg',
+    title: 'Warfare Implements & The 1886 Kiriji Peace Treaty',
     category: 'warfare-treaty',
     categoryLabel: 'Warfare & Treaty',
     locationInMuseum: 'Cocoa House 24th Floor — Conflict Resolution & Treaty Wing',
     era: '19th Century (Kiriji/Ekiti-Parapo Era, 1877–1886)',
-    caption: 'A two-tier museum display section featuring the top section titled "Yoruba Peace Treaty (1886)" with informational boards and artifacts, and the bottom section labeled "Warfare Implements" displaying historical flintlock rifles and blades.',
-    curatorNote: 'The top tier documents the landmark 1886 Peace Treaty that brought an end to the 16-year Kiriji War through indigenous and British diplomatic arbitration, while the lower tier houses authentic 19th-century blacksmith-forged flintlock Dane rifles, combat swords, and iron blades.',
+    caption: 'A two-tiered display casing highlighting the Yoruba Peace Treaty (1886) with historical records and artifacts on top, and 19th-century warfare implements including flintlock rifles and iron blades below.',
+    curatorNote: 'The top tier documents the landmark 1886 Peace Treaty that brought an end to the 16-year Kiriji War through indigenous and British diplomatic arbitration, while the lower tier houses authentic 19th-century blacksmith-forged flintlock rifles, combat swords, and iron blades.',
     highlights: [
-      'Top section: Official historical boards on the 1886 Yoruba Peace Treaty',
+      'Top section: Official historical records on the 1886 Yoruba Peace Treaty',
       'Bottom section: "Warfare Implements" showcase case',
       'Authentic 19th-century flintlock muzzle-loading rifles',
       'Hand-forged iron combat blades and scabbards'
@@ -78,104 +78,104 @@ export const MUSEUM_PHOTOS: MuseumPhoto[] = [
   },
   {
     id: 3,
-    url: 'https://i.postimg.cc/RhsLth41/Whats-App-Image-2026-09-10-at-09-18-48.jpg',
-    title: 'Memories of the Past (Ohun Elo Igbà Atijó) — Vintage Technology',
+    url: 'https://i.postimg.cc/Y9ydcKxn/Whats-App-Image-2026-09-10-at-09-18-48.jpg',
+    title: 'Memories of the Past (Ohun Elo Igbà Atijó)',
     category: 'vintage-tech',
     categoryLabel: 'Vintage Technology',
     locationInMuseum: 'Cocoa House 24th Floor — Indigenous Technology & Domestic Heritage',
     era: 'Late 19th Century to Mid-20th Century',
-    caption: 'A recessed wall exhibit titled "Memories of the Past (Ohun Elo Igbà Atijó)" featuring three shelves containing vintage technology items, including an old television, typewriter, gramophone, rotary telephones, cameras, and manual sewing machines.',
+    caption: 'A three-level recessed wall exhibit displaying vintage household technologies and communication devices, including an old television, typewriter, portable gramophone, rotary phones, and mechanical sewing machines.',
     curatorNote: 'This popular retrospective installation tracks the transition of Yoruba society into modern technology. The three illuminated shelves preserve early mechanical inventions that transformed commerce, documentation, communication, and home tailoring throughout the region.',
     highlights: [
-      'Recessed multi-shelf installation: "Ohun Elo Igbà Atijó"',
+      'Recessed three-level installation: "Ohun Elo Igbà Atijó"',
       'Early vacuum-tube / cathode television receiver and manual typewriter',
-      'Antique bellows cameras and desktop rotary dial telephones',
-      'Vintage hand-crank gramophone and cast-iron manual sewing machines'
+      'Antique rotary phones and desktop communication tools',
+      'Vintage portable gramophone and cast-iron mechanical sewing machines'
     ]
   },
   {
     id: 4,
-    url: 'https://i.postimg.cc/fy2fdyDY/Whats-App-Image-2026-09-10-at-09-18-50.jpg',
-    title: 'Vintage Hand-Crank Gramophone & Vinyl Turntable Platter',
+    url: 'https://i.postimg.cc/tTmB0Qzc/Whats-App-Image-2026-09-10-at-09-18-50.jpg',
+    title: 'Sound Artifacts: Antique Gramophone',
     category: 'sound-archives',
     categoryLabel: 'Sound & Acoustic Archives',
     locationInMuseum: 'Cocoa House 24th Floor — Performing Arts & Audio Heritage',
     era: 'Early to Mid-20th Century (Shellac & Vinyl Era)',
-    caption: 'A close-up shot of an opened vintage black hand-crank gramophone with a vinyl record on the turntable platter and a sign clearly reading "GRAMOPHONE" in the foreground.',
+    caption: 'A close-up view of an opened vintage portable hand-crank gramophone with a vinyl record set on the turntable platter and a clear plastic sign reading "GRAMOPHONE" in the foreground.',
     curatorNote: 'An intimate view of an authentic portable wind-up gramophone. This acoustic marvel enabled early Yoruba highlife, juju, and traditional oratory to be recorded on 78 RPM shellac and vinyl discs, playing a transformative role in regional music distribution.',
     highlights: [
-      'Open portable black leatherette casing with mechanical soundbox',
-      'Turntable platter with authentic period vinyl phonograph disc',
+      'Opened vintage portable hand-crank gramophone casing',
+      'Turntable platter with authentic period vinyl record',
       'Hand-crank spring motor winding mechanism',
-      'Prominent museum descriptive plaque reading "GRAMOPHONE"'
+      'Clear plastic sign reading "GRAMOPHONE" in the foreground'
     ]
   },
   {
     id: 5,
-    url: 'https://i.postimg.cc/VvGWtvmg/Whats-App-Image-2026-09-10-at-09-18-52.jpg',
-    title: 'Hall of Fame: Chief M.K.O. Abiola & Chief Obafemi Awolowo',
+    url: 'https://i.postimg.cc/QtnfLGqv/Whats-App-Image-2026-09-10-at-09-18-52.jpg',
+    title: 'The Hall of Fame: Honoring Omoluabi Pioneers',
     category: 'hall-of-fame',
     categoryLabel: 'Hall of Fame',
     locationInMuseum: 'Cocoa House 24th Floor — Hall of Fame Exploratory Room',
     era: 'Modern Nigerian Political & Socioeconomic History',
-    caption: 'A female visitor with short hair viewed from behind as she looks closely at biographical exhibit panels featuring Chief Moshood Kashimawo Olawale Abiola and Chief Obafemi Awolowo.',
+    caption: 'A rear perspective of a visitor viewing wall-mounted biographical panels and photographic portraits of prominent figures, including Chief Moshood Kashimawo Olawale Abiola and Chief Obafemi Awolowo.',
     curatorNote: 'Visitors reflect before the monumental citations of two towering Western Nigerian figures: Premier Obafemi Awolowo, architect of free education and builder of Cocoa House, and Bashorun M.K.O. Abiola, international business titan and martyr of democratic governance.',
     highlights: [
       'Biographical wall panels for Chief Obafemi Awolowo and Chief M.K.O. Abiola',
-      'In-depth archival citations of pioneering leadership and regional progress',
-      'Reflective visitor experience honoring national transformative leaders',
+      'Archival photographic portraits and pioneering leadership citations',
+      'Rear perspective of visitor engaging with regional history',
       'Omoluabi leadership philosophy on full display'
     ]
   },
   {
     id: 6,
-    url: 'https://i.postimg.cc/rsnN4sMh/Whats-App-Image-2026-09-10-at-09-18-54.jpg',
-    title: 'Guided Tour: University College Hospital (UCH) Historical Panel',
+    url: 'https://i.postimg.cc/C16cyTNy/Whats-App-Image-2026-09-10-at-09-18-54.jpg',
+    title: 'Educational Guided Tours & History Talks',
     category: 'guided-tours',
     categoryLabel: 'Guided Tours',
     locationInMuseum: 'Cocoa House 24th Floor — Institutional Heritage Corridor',
     era: 'Post-WWII / 1950s Medical & Institutional Foundations',
-    caption: 'A tour guide in a blue patterned tunic speaking to a group of visitors while gesturing toward a historical panel about the University College Hospital, Ibadan.',
+    caption: 'A museum tour guide gesturing toward a wall panel titled "University College Hospital, Ibadan" while speaking to a group of visitors listening inside the gallery.',
     curatorNote: 'Museum docents dressed in cultural attire lead school pupils, university scholars, and international dignitaries on immersive walkthroughs. Here, the guide details how the University College Hospital (UCH) Ibadan was established in 1952 as West Africa\'s premier teaching hospital.',
     highlights: [
-      'Resident docent in traditional blue patterned tunic conducting tour',
-      'University College Hospital (UCH), Ibadan architectural & medical history panel',
-      'Interactive educational engagement for students and tour groups',
-      'Documentation of Southwestern Nigeria\'s pioneering public health firsts'
+      'Museum tour guide gesturing toward historical wall panels',
+      'University College Hospital (UCH), Ibadan institutional history panel',
+      'Interactive educational guided tours and history talks',
+      'Group of visitors listening attentively inside the gallery'
     ]
   },
   {
     id: 7,
-    url: 'https://i.postimg.cc/908Y90CL/Whats-App-Image-2026-09-10-at-09-18-55-(1).jpg',
-    title: 'Traditional Yoruba Beaded Crown (Ade) with Bird Motifs & Strands',
-    category: 'royal-regalia',
-    categoryLabel: 'Royal Regalia',
-    locationInMuseum: 'Cocoa House 24th Floor — Sacred Monarchical Insignia Wing',
-    era: 'Classical Yoruba Kingship & Sacred Beadwork Tradition',
-    caption: 'A detailed sculpture of a traditional Yoruba beaded crown (Ade) crafted in yellow and orange beads, adorned with bird motifs surrounding the crown and long strands of beads extending downward.',
-    curatorNote: 'This majestic Ade Nla represents the pinnacle of Yoruba royal investiture. The radiant yellow and orange micro-beadwork incorporates protective bird figures (Okin/Eye) symbolizing spiritual vigilance and maternal ancestral power, while long beaded veil strands shield commoners from the King\'s sacred gaze.',
-    highlights: [
-      'Conical royal crown embroidered with yellow and amber seed glass beads',
-      'Perched bird figures (Eye) evoking celestial harmony and royal protection',
-      'Cascading beaded face veil strands (Ikan Ade) concealing the Oba\'s face',
-      'Sacred symbol of divine royal authority (Ashe) across Yoruba monarchies'
-    ]
-  },
-  {
-    id: 8,
-    url: 'https://i.postimg.cc/VvGWtvmG/Whats-App-Image-2026-09-10-at-09-18-55.jpg',
-    title: 'Hall of Fame: Herbert Macaulay, Lt. Col. Fajuyi & Sapara Williams',
+    url: 'https://i.postimg.cc/fytBD2Hq/Whats-App-Image-2026-09-10-at-09-18-55.jpg',
+    title: 'Foundational Leaders & Political History',
     category: 'hall-of-fame',
     categoryLabel: 'Hall of Fame',
     locationInMuseum: 'Cocoa House 24th Floor — Hall of Fame Exploratory Room',
     era: 'Late 19th Century to 20th Century Pioneers',
-    caption: 'A male visitor in a gray shirt standing in profile with folded arms, reading wall panels detailing Herbert Samuel Macaulay, Lt. Colonel Francis Adekunle Fajuyi, and Christopher Sapara Williams.',
+    caption: 'A side-profile view of a visitor standing in front of historical wall exhibits dedicated to Herbert Samuel Macaulay, Lt. Colonel Francis Adekunle Fajuyi, and Christopher Sapara Williams.',
     curatorNote: 'A visitor engrossed in the heroic legacies of Herbert Samuel Macaulay (Father of Nigerian Nationalism), Lt. Colonel Francis Adekunle Fajuyi (first military governor of Western Region revered for supreme military honor), and Christopher Alexander Sapara Williams (first indigenous Nigerian lawyer called to the English Bar in 1888).',
     highlights: [
       'Herbert Samuel Macaulay: Founder of modern Nigerian anticolonial politics',
       'Lt. Col. Francis Adekunle Fajuyi: Legendary sacrifice and integrity in military statecraft',
-      'Christopher Alexander Sapara Williams: Pioneer advocate and legal luminary (1888)',
-      'Active visitor engagement with Omoluabi history'
+      'Christopher Sapara Williams: Pioneer advocate and legal luminary (1888)',
+      'Side-profile view of visitor exploring political history'
+    ]
+  },
+  {
+    id: 8,
+    url: 'https://i.postimg.cc/qqhj4bmj/Whats-App-Image-2026-09-10-at-09-18-55-(1).jpg',
+    title: 'Monarchical Crown Jewels & Royal Beaded Regalia',
+    category: 'royal-regalia',
+    categoryLabel: 'Royal Regalia',
+    locationInMuseum: 'Cocoa House 24th Floor — Sacred Monarchical Insignia Wing',
+    era: 'Classical Yoruba Kingship & Sacred Beadwork Tradition',
+    caption: 'A detailed sculpture of a traditional Yoruba beaded crown (Ade) adorned with yellow and orange glass beads, bird motifs, a facial outline, and long hanging beaded veils.',
+    curatorNote: 'This majestic Ade Nla represents the pinnacle of Yoruba royal investiture. The radiant yellow and orange glass beadwork incorporates protective bird figures (Okin/Eye) symbolizing spiritual vigilance and maternal ancestral power, while long beaded veil strands shield commoners from the King\'s sacred gaze.',
+    highlights: [
+      'Sculpture of traditional Yoruba beaded crown (Ade)',
+      'Adorned with yellow and orange glass beads',
+      'Sacred bird motifs and ancestral facial outline',
+      'Long hanging beaded veil strands (Ikan Ade)'
     ]
   }
 ];

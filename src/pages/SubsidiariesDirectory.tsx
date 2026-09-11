@@ -28,6 +28,8 @@ interface Subsidiary {
   keyAssets: string[];
   website?: string;
   image: string;
+  logo?: string;
+  logoText: string;
 }
 
 const SUBSIDIARIES_DATA: Subsidiary[] = [
@@ -41,7 +43,9 @@ const SUBSIDIARIES_DATA: Subsidiary[] = [
     description: "One of West Africa's oldest and most prestigious property development and estate management enterprises, owning landmark skyscrapers and luxury residential towers across Southwestern Nigeria.",
     keyAssets: ["Cocoa House (Ibadan)", "Wemabod Towers (Broad Street Lagos)", "Sovereign Heights (Ikoyi)", "Western House"],
     website: "https://wemabod.com",
-    image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80"
+    image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80",
+    logo: "https://wemabod.com/wp-content/uploads/2021/04/wemabod-logo.png",
+    logoText: "WL"
   },
   {
     name: "SWAgCo Limited (South-West Agriculture Company)",
@@ -53,7 +57,9 @@ const SUBSIDIARIES_DATA: Subsidiary[] = [
     description: "The agricultural engine of Odu'a Group, established to unlock commercial farming, rehabilitate abandoned cocoa estates, and spearhead large-scale cassava-to-starch processing.",
     keyAssets: ["12,000+ Hectares Secured Farmland", "Cassava Processing Plants", "Ondo Cocoa Regeneration Hub"],
     website: "https://swagco.ng",
-    image: "https://images.unsplash.com/photo-1592982537447-7440770cbfc9?auto=format&fit=crop&w=800&q=80"
+    image: "https://images.unsplash.com/photo-1592982537447-7440770cbfc9?auto=format&fit=crop&w=800&q=80",
+    logo: "https://swagco.ng/wp-content/uploads/2021/05/swagco-logo.png",
+    logoText: "SW"
   },
   {
     name: "Premier Hotel Ibadan",
@@ -65,7 +71,9 @@ const SUBSIDIARIES_DATA: Subsidiary[] = [
     description: "Sitting majestically atop Mokola Hill, Premier Hotel is West Africa's iconic 4-star hospitality resort undergoing a comprehensive 5-star modernization in partnership with international operators.",
     keyAssets: ["Banquet Halls (1,000+ Capacity)", "Hilltop Olympic Pool", "Presidents Suite Complex"],
     website: "https://premierhotelibadan.com",
-    image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80"
+    image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80",
+    logo: "https://premierhotelibadan.com/wp-content/uploads/2020/07/logo.png",
+    logoText: "PH"
   },
   {
     name: "Lafia Hotel Ibadan",
@@ -76,7 +84,10 @@ const SUBSIDIARIES_DATA: Subsidiary[] = [
     established: "1973",
     description: "Renowned garden hotel offering business accommodations, corporate event centers, and serene greenery near the Abeokuta-Ibadan industrial axis.",
     keyAssets: ["Garden Lodges", "Corporate Conference Suites"],
-    image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80"
+    website: "https://premierhotelibadan.com",
+    image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80",
+    logo: "https://premierhotelibadan.com/wp-content/uploads/2020/07/logo.png",
+    logoText: "LH"
   },
   {
     name: "Lagos Airport Hotel",
@@ -87,7 +98,10 @@ const SUBSIDIARIES_DATA: Subsidiary[] = [
     established: "1942",
     description: "A flagship hospitality landmark situated in the heart of Ikeja, Lagos, serving international travelers, aviation crews, and major regional corporate summits.",
     keyAssets: ["250+ Luxury Rooms", "Monarch Banquet Complex", "Executive Boardrooms"],
-    image: "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=800&q=80"
+    website: "https://lagosairporthotel.com.ng",
+    image: "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=800&q=80",
+    logo: "https://lagosairporthotel.com.ng/wp-content/uploads/2021/08/lah-logo.png",
+    logoText: "LAH"
   },
   {
     name: "Glanvill Enthoven Insurance Brokers & Pensions",
@@ -98,8 +112,37 @@ const SUBSIDIARIES_DATA: Subsidiary[] = [
     established: "1957",
     description: "Pioneer risk management and insurance broking firm serving oil & gas upstream fields, maritime cargo, corporate assets, and group life pensions.",
     keyAssets: ["Energy Risk Division", "Corporate Reinsurance Services"],
-    website: "https://glanvills.com",
-    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80"
+    website: "https://glanvillenthoven.com.ng",
+    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80",
+    logo: "https://glanvillenthoven.com.ng/wp-content/uploads/2021/06/glanvill-logo.png",
+    logoText: "GE"
+  },
+  {
+    name: "South-West Innovation & Technology (SWIT)",
+    category: "Subsidiary",
+    sector: "Energy & Logistics",
+    state: "Lagos / Oyo / Ogun",
+    location: "Innovation Hub, Cocoa House, Ibadan",
+    established: "2022",
+    description: "Strategic technology incubator driving enterprise ERP solutions, smart agro-logistics tracking, and university tech research commercialization across the 6 Southwest states.",
+    keyAssets: ["Digital ERP Backbone", "University Sandbox Labs", "Agro-Traceability Platform"],
+    website: "https://swit.odua.ng",
+    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80",
+    logoText: "SWIT"
+  },
+  {
+    name: "Westlink Integrated Agriculture Limited (WIAL)",
+    category: "Subsidiary",
+    sector: "Agribusiness",
+    state: "Ogun / Ekiti / Oyo",
+    location: "Floors 20-23, Cocoa House, Ibadan",
+    established: "2018",
+    description: "Wholly owned agricultural operator managing extensive mechanized grain, maize, and cassava farmlands across Ogun and Ekiti States.",
+    keyAssets: ["3,300ha Imeko Farm Hub", "4,283ha Oke-Ako Grain Farm", "Eleyele Agro Warehouse Hub"],
+    website: "https://swagco.ng",
+    image: "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=800&q=80",
+    logo: "https://swagco.ng/wp-content/uploads/2021/05/swagco-logo.png",
+    logoText: "WIAL"
   },
   {
     name: "Cocoa Industry Ede",
@@ -110,18 +153,49 @@ const SUBSIDIARIES_DATA: Subsidiary[] = [
     established: "1977",
     description: "Historical cocoa butter, liquor, and cake processing factory undergoing repositioning to export fine cocoa derivative products to international confectionery markets.",
     keyAssets: ["Cocoa Bean Processing Line", "Export Warehouses"],
-    image: "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&w=800&q=80"
+    website: "https://oduainvestment.com.ng/portfolio",
+    image: "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&w=800&q=80",
+    logoText: "CIL"
   },
   {
-    name: "Associated Companies (FBN Holdings / Wema Bank / others)",
+    name: "Wema Bank PLC",
     category: "Associate",
     sector: "Financial Services",
-    state: "Southwest Nigeria",
-    location: "Lagos, Nigeria",
-    established: "Strategic Holdings",
-    description: "Strategic equity stakes held by Odu'a Group in premier Nigerian financial institutions, guaranteeing board governance and high dividend yields.",
-    keyAssets: ["Banking Equity Holdings", "Strategic Capital Reserves"],
-    image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=800&q=80"
+    state: "National / Southwest Nigeria",
+    location: "Wema Towers, 54 Marina, Lagos",
+    established: "1945",
+    description: "Pioneer of ALAT, Africa’s first fully digital banking platform, representing over 78 years of resilient financial services, retail banking, and commercial capital creation.",
+    keyAssets: ["ALAT Digital Banking", "150+ Branch Network", "Tier-1 Capital Reserves"],
+    website: "https://wemabank.com",
+    image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=800&q=80",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/4/4b/Wema_Bank_logo.png",
+    logoText: "WEMA"
+  },
+  {
+    name: "Great Nigeria Insurance Plc",
+    category: "Associate",
+    sector: "Financial Services",
+    state: "Lagos / National",
+    location: "GNI House, 8 Opebi Road, Ikeja, Lagos",
+    established: "1960",
+    description: "A premier insurance underwriting enterprise with over 60 years of active operations providing non-life, life assurance, pensions, and specialized risk solutions.",
+    keyAssets: ["Non-Life & Life Underwriting", "Corporate Pensions", "Nationwide Branch Network"],
+    website: "https://greatnigeriaplc.com",
+    image: "https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=800&q=80",
+    logoText: "GNI"
+  },
+  {
+    name: "FCMB Pensions Limited",
+    category: "Associate",
+    sector: "Financial Services",
+    state: "National / Lagos",
+    location: "Plot 21, Marina, Lagos",
+    established: "2005",
+    description: "A leading licensed Pension Fund Administrator (PFA) with over ₦1.1 Trillion in Assets Under Management (AUM), regulated by PenCom and the Central Bank of Nigeria.",
+    keyAssets: ["₦1.1T+ AUM", "500,000+ RSA Contributors", "PenCom Aa- Grade"],
+    website: "https://fcmbpensions.com",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
+    logoText: "FCMB"
   }
 ];
 
@@ -223,31 +297,56 @@ export default function SubsidiariesDirectory({ subsidiaries, onNavigate = () =>
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: idx * 0.05 }}
-              className="bg-white rounded-3xl border border-neutral-200 overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col justify-between"
+              className="bg-white rounded-3xl border border-neutral-200 overflow-hidden shadow-sm hover:shadow-lg transition-all flex flex-col justify-between group"
             >
               <div>
-                <div className="h-48 relative overflow-hidden bg-neutral-900">
+                <div className="h-48 relative overflow-hidden bg-neutral-950">
                   <img
                     src={sub.image}
                     alt={sub.name}
-                    className="w-full h-full object-cover opacity-80 hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-500"
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent" />
                   <div className="absolute top-4 left-4 flex gap-2">
-                    <span className="bg-neutral-900/80 backdrop-blur-md text-white text-[10px] font-mono font-bold uppercase px-3 py-1 rounded-full border border-white/20">
+                    <span className="bg-neutral-900/85 backdrop-blur-md text-white text-[10px] font-mono font-bold uppercase px-3 py-1 rounded-full border border-white/20 shadow-xs">
                       {sub.category}
                     </span>
-                    <span className="bg-[#00a757]/90 backdrop-blur-md text-white text-[10px] font-mono font-bold uppercase px-3 py-1 rounded-full border border-white/20">
+                    <span className="bg-[#00a757]/90 backdrop-blur-md text-white text-[10px] font-mono font-bold uppercase px-3 py-1 rounded-full border border-white/20 shadow-xs">
                       Est. {sub.established}
                     </span>
                   </div>
+
+                  {/* Prominent Subsidiary Company Logo Badge */}
+                  <div className="absolute -bottom-5 left-6 w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-white p-2 border border-neutral-200/90 shadow-md flex items-center justify-center overflow-hidden z-10">
+                    {sub.logo ? (
+                      <img
+                        src={sub.logo}
+                        alt={`${sub.name} logo`}
+                        className="w-full h-full object-contain filter contrast-105"
+                        referrerPolicy="no-referrer"
+                        onError={(e) => {
+                          e.currentTarget.style.display = 'none';
+                          const fallback = e.currentTarget.parentElement?.querySelector('.logo-fallback') as HTMLElement | null;
+                          if (fallback) fallback.style.display = 'flex';
+                        }}
+                      />
+                    ) : null}
+                    <div 
+                      className={`logo-fallback ${sub.logo ? 'hidden' : 'flex'} w-full h-full items-center justify-center rounded-xl bg-gradient-to-br from-[#00a757] via-emerald-800 to-neutral-900 font-serif font-bold text-white text-xs sm:text-sm tracking-wider shadow-inner`}
+                    >
+                      {sub.logoText || sub.name.substring(0, 2).toUpperCase()}
+                    </div>
+                  </div>
                 </div>
 
-                <div className="p-6 space-y-4">
+                <div className="p-6 pt-9 space-y-4">
                   <div>
                     <span className="text-[10px] font-mono font-bold uppercase text-[#00a757] tracking-wider block mb-1">
                       {sub.sector}
                     </span>
-                    <h3 className="font-serif text-xl font-bold text-neutral-900">{sub.name}</h3>
+                    <h3 className="font-serif text-xl font-bold text-neutral-900 group-hover:text-[#00a757] transition-colors">
+                      {sub.name}
+                    </h3>
                   </div>
 
                   <p className="text-neutral-600 text-xs font-light leading-relaxed">
@@ -278,13 +377,13 @@ export default function SubsidiariesDirectory({ subsidiaries, onNavigate = () =>
                     href={sub.website}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full bg-neutral-900 hover:bg-[#00a757] text-white font-bold text-xs uppercase tracking-wider py-3 px-4 rounded-xl flex items-center justify-center gap-2 transition-colors cursor-pointer mt-4"
+                    className="w-full bg-[#00a757] hover:bg-emerald-700 text-white font-bold text-xs uppercase tracking-wider py-3.5 px-4 rounded-xl flex items-center justify-center gap-2 transition-all shadow-sm hover:shadow-md cursor-pointer mt-4"
                   >
                     <span>Visit Official Website</span>
-                    <ExternalLink className="w-3 h-3 text-[#fce303]" />
+                    <ExternalLink className="w-3.5 h-3.5 text-[#fce303]" />
                   </a>
                 ) : (
-                  <div className="w-full bg-neutral-100 text-neutral-500 font-bold text-xs uppercase tracking-wider py-3 px-4 rounded-xl text-center mt-4">
+                  <div className="w-full bg-neutral-100 text-neutral-500 font-bold text-xs uppercase tracking-wider py-3 px-4 rounded-xl text-center mt-4 border border-neutral-200/60">
                     Managed via Headquarters
                   </div>
                 )}

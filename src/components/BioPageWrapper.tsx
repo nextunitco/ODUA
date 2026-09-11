@@ -187,24 +187,6 @@ export default function BioPageWrapper({
                   <span>{backButtonLabel}</span>
                 </button>
               )}
-
-              <div className="hidden sm:flex items-center gap-2 text-xs text-neutral-300 font-medium">
-                <button 
-                  onClick={() => setCurrentPage('Home')}
-                  className="hover:text-white transition-colors cursor-pointer"
-                >
-                  Home
-                </button>
-                <span className="text-neutral-500">/</span>
-                <button 
-                  onClick={() => setCurrentPage(category === 'leadership' ? 'Leadership Team' : 'Board of Directors')}
-                  className="hover:text-white transition-colors cursor-pointer"
-                >
-                  {category === 'leadership' ? 'Leadership' : 'Board of Directors'}
-                </button>
-                <span className="text-neutral-500">/</span>
-                <span className="text-[#fce303] truncate max-w-[200px] font-semibold">{displayName}</span>
-              </div>
             </div>
             <div>
               <span className="text-[10px] uppercase font-mono tracking-widest text-[#fce303] bg-white/10 border border-white/15 px-3 py-1 rounded-full font-bold">

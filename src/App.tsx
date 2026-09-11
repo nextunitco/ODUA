@@ -93,7 +93,7 @@ import SubsidiariesDirectory from './pages/SubsidiariesDirectory';
 import { DynamicCustomPage } from './components/DynamicCustomPage';
 
 // Static assets high-resolution alternative
-const cocoaHouseImg = 'https://i.postimg.cc/gj0gKfZ7/cocoa-house.jpg';
+const cocoaHouseImg = '/uploads/cocoa_house_sharp.jpg';
 
 // Helper to resolve initial page from URL query, hash, or reload persistence
 function getInitialPage(): string {
@@ -1112,26 +1112,26 @@ export default function App() {
                     ? 'bg-neutral-950/85 backdrop-blur-md text-white border-b border-white/10 shadow-lg'
                     : 'text-white shadow-lg border-b border-white/5'
                 }`
-                : 'bg-gradient-to-b from-neutral-950/80 via-neutral-950/40 to-transparent text-white border-b-0 shadow-none backdrop-blur-[1px]'
+                : 'bg-gradient-to-b from-neutral-950/80 via-neutral-950/35 to-transparent text-white border-b-0 shadow-none'
             }`}
             style={effectiveScrolled && wpHeaderStyle === 'solid' ? { backgroundColor: currentTheme.primary } : undefined}
           >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className={`flex justify-between items-center transition-all duration-300 ${
-              effectiveScrolled ? 'h-20 sm:h-22' : 'h-22 sm:h-26'
+              effectiveScrolled ? 'h-18 sm:h-20 md:h-22' : 'h-24 sm:h-28 md:h-32'
             }`}>
               
-              {/* Prominent Emblem Logo Badge Card (pure logo in gold-trimmed white badge, big & clearly visible, without text beside it) */}
+              {/* Prominent & Majestic Emblem Logo Badge Card */}
               <button 
                 onClick={() => setCurrentPage('Home')} 
-                className="group focus:outline-none cursor-pointer shrink-0 transition-transform duration-300 hover:scale-105 active:scale-95 py-1 z-10"
+                className="group focus:outline-none cursor-pointer shrink-0 transition-transform duration-300 hover:scale-105 active:scale-95 py-1 z-10 my-auto"
                 aria-label="Odu'a Investment Company Limited - Home"
               >
                 <div 
-                  className={`relative flex items-center justify-center bg-white rounded-2xl sm:rounded-3xl border-[3px] sm:border-[3.5px] border-[#fce303] ring-1 ring-amber-400/40 shadow-xl shadow-black/25 p-2 sm:p-2.5 transition-all duration-300 group-hover:shadow-2xl group-hover:border-[#ebd302] ${
+                  className={`relative flex items-center justify-center bg-white rounded-2xl sm:rounded-3xl border-[2.5px] sm:border-[3px] border-[#fce303] ring-2 ring-amber-400/40 shadow-xl shadow-black/25 p-1.5 sm:p-2.5 transition-all duration-300 group-hover:shadow-2xl group-hover:border-[#ebd302] ${
                     effectiveScrolled 
-                      ? 'w-16 h-16 sm:w-20 sm:h-20 md:w-22 md:h-22 lg:w-24 lg:h-24' 
-                      : 'w-[72px] h-[72px] sm:w-[88px] sm:h-[88px] md:w-[98px] md:h-[98px] lg:w-[108px] lg:h-[108px]'
+                      ? 'w-14 h-14 sm:w-16 sm:h-16 md:w-18 md:h-18' 
+                      : 'w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32'
                   }`}
                 >
                   <img 
@@ -1384,8 +1384,7 @@ export default function App() {
                             <div className="rounded-xl bg-white text-neutral-800 shadow-xl border border-neutral-100 py-1.5">
                               {[
                                 { id: 'Odu\'a Foundation', label: 'The Odu\'a Foundation' },
-                                { id: 'Golden Jubilee', label: '50-Year Golden Jubilee' },
-                                { id: 'Subsidiaries Directory', label: 'Subsidiaries Directory' }
+                                { id: 'Golden Jubilee', label: '50-Year Golden Jubilee' }
                               ].map((item) => (
                                 <button
                                   key={item.id}
@@ -1787,8 +1786,7 @@ export default function App() {
                           <div className="pl-3 pr-1 py-1 space-y-1 rounded-xl bg-neutral-50 border border-neutral-100 animate-in fade-in slide-in-from-top-1 duration-150">
                             {[
                               { id: 'Odu\'a Foundation', label: 'The Odu\'a Foundation' },
-                              { id: 'Golden Jubilee', label: '50-Year Golden Jubilee' },
-                              { id: 'Subsidiaries Directory', label: 'Subsidiaries Directory' }
+                              { id: 'Golden Jubilee', label: '50-Year Golden Jubilee' }
                             ].map((item) => (
                               <button
                                 key={item.id}

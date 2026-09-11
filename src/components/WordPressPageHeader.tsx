@@ -13,8 +13,8 @@ export interface WordPressPageHeaderProps {
   subtitle?: string;
   category?: string;
   badge?: string;
-  breadcrumbs: BreadcrumbItem[];
-  onNavigate: (page: string) => void;
+  breadcrumbs?: BreadcrumbItem[];
+  onNavigate?: (page: string) => void;
   action?: React.ReactNode;
   icon?: React.ReactNode;
   align?: 'left' | 'center';
@@ -26,8 +26,8 @@ export default function WordPressPageHeader({
   subtitle,
   category,
   badge,
-  breadcrumbs,
-  onNavigate,
+  breadcrumbs = [],
+  onNavigate = () => {},
   action,
   icon,
   align = 'left',
@@ -37,7 +37,7 @@ export default function WordPressPageHeader({
   const activeBgImage = backgroundImage || HERO_BACKGROUNDS.aboutUs || "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1920&q=80";
 
   return (
-    <section className="relative text-white pt-28 sm:pt-32 md:pt-36 pb-12 sm:pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden border-b border-emerald-900/30 bg-neutral-950 min-h-[260px] sm:min-h-[300px] md:min-h-[340px] flex flex-col justify-end">
+    <section className="relative text-white pt-32 sm:pt-36 md:pt-40 lg:pt-44 pb-12 sm:pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden border-b border-emerald-900/30 bg-neutral-950 min-h-[280px] sm:min-h-[320px] md:min-h-[360px] flex flex-col justify-end">
       {/* High-Impact Clearly Visible Background Image */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <img
@@ -69,42 +69,6 @@ export default function WordPressPageHeader({
       <div className="absolute -top-24 right-1/4 z-1 w-96 h-64 bg-emerald-500/15 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl w-full mx-auto relative z-10">
-        {/* WordPress Hierarchical Breadcrumb Navigation */}
-        <nav aria-label="Breadcrumb" className="mb-4">
-          <ol className={`flex flex-wrap items-center gap-1.5 text-xs font-sans ${align === 'center' ? 'justify-center' : 'justify-start'}`}>
-            <li>
-              <button
-                type="button"
-                onClick={() => onNavigate('Home')}
-                className="text-neutral-200 hover:text-[#fce303] transition-colors inline-flex items-center gap-1.5 cursor-pointer drop-shadow-xs font-medium"
-                title="Go to Homepage"
-              >
-                <HomeIcon className="w-3.5 h-3.5 text-[#fce303]" />
-                <span>Home</span>
-              </button>
-            </li>
-
-            {breadcrumbs.map((crumb, idx) => (
-              <li key={idx} className="inline-flex items-center gap-1.5">
-                <ChevronRight className="w-3.5 h-3.5 text-emerald-400/80 shrink-0" />
-                {crumb.page && !crumb.active ? (
-                  <button
-                    type="button"
-                    onClick={() => onNavigate(crumb.page!)}
-                    className="text-neutral-200 hover:text-[#fce303] transition-colors cursor-pointer truncate max-w-[180px] sm:max-w-none drop-shadow-xs font-medium"
-                  >
-                    {crumb.label}
-                  </button>
-                ) : (
-                  <span className="text-white font-semibold truncate max-w-[220px] sm:max-w-none drop-shadow-xs">
-                    {crumb.label}
-                  </span>
-                )}
-              </li>
-            ))}
-          </ol>
-        </nav>
-
         {/* Header Content Grid / Flex */}
         <div className={`flex flex-col ${align === 'center' ? 'items-center text-center' : 'sm:flex-row sm:items-end justify-between text-left'} gap-4`}>
           <div className="max-w-3xl space-y-2.5">
