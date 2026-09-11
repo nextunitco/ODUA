@@ -16,6 +16,10 @@ import {
 } from 'lucide-react';
 import WordPressPageHeader from '../components/WordPressPageHeader';
 import { HERO_BACKGROUNDS } from '../data/heroBackgrounds';
+import wemabodLogo from '../assets/images/subsidiaries/wemabod.jpg';
+import lagosAirportHotelLogo from '../assets/images/subsidiaries/lagos-airport-hotel.jpg';
+import glanvillsLogo from '../assets/images/subsidiaries/glanvills.png';
+import westernHotelLogo from '../assets/images/subsidiaries/western-hotel.png';
 
 interface Subsidiary {
   name: string;
@@ -44,7 +48,7 @@ const SUBSIDIARIES_DATA: Subsidiary[] = [
     keyAssets: ["Cocoa House (Ibadan)", "Wemabod Towers (Broad Street Lagos)", "Sovereign Heights (Ikoyi)", "Western House"],
     website: "https://wemabod.com",
     image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80",
-    logo: "https://wemabod.com/wp-content/uploads/2021/04/wemabod-logo.png",
+    logo: wemabodLogo,
     logoText: "WL"
   },
   {
@@ -58,7 +62,6 @@ const SUBSIDIARIES_DATA: Subsidiary[] = [
     keyAssets: ["12,000+ Hectares Secured Farmland", "Cassava Processing Plants", "Ondo Cocoa Regeneration Hub"],
     website: "https://swagco.ng",
     image: "https://images.unsplash.com/photo-1592982537447-7440770cbfc9?auto=format&fit=crop&w=800&q=80",
-    logo: "https://swagco.ng/wp-content/uploads/2021/05/swagco-logo.png",
     logoText: "SW"
   },
   {
@@ -72,7 +75,7 @@ const SUBSIDIARIES_DATA: Subsidiary[] = [
     keyAssets: ["Banquet Halls (1,000+ Capacity)", "Hilltop Olympic Pool", "Presidents Suite Complex"],
     website: "https://premierhotelibadan.com",
     image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80",
-    logo: "https://premierhotelibadan.com/wp-content/uploads/2020/07/logo.png",
+    logo: westernHotelLogo,
     logoText: "PH"
   },
   {
@@ -86,7 +89,7 @@ const SUBSIDIARIES_DATA: Subsidiary[] = [
     keyAssets: ["Garden Lodges", "Corporate Conference Suites"],
     website: "https://premierhotelibadan.com",
     image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80",
-    logo: "https://premierhotelibadan.com/wp-content/uploads/2020/07/logo.png",
+    logo: westernHotelLogo,
     logoText: "LH"
   },
   {
@@ -100,7 +103,7 @@ const SUBSIDIARIES_DATA: Subsidiary[] = [
     keyAssets: ["250+ Luxury Rooms", "Monarch Banquet Complex", "Executive Boardrooms"],
     website: "https://lagosairporthotel.com.ng",
     image: "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=800&q=80",
-    logo: "https://lagosairporthotel.com.ng/wp-content/uploads/2021/08/lah-logo.png",
+    logo: lagosAirportHotelLogo,
     logoText: "LAH"
   },
   {
@@ -114,7 +117,7 @@ const SUBSIDIARIES_DATA: Subsidiary[] = [
     keyAssets: ["Energy Risk Division", "Corporate Reinsurance Services"],
     website: "https://glanvillenthoven.com.ng",
     image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80",
-    logo: "https://glanvillenthoven.com.ng/wp-content/uploads/2021/06/glanvill-logo.png",
+    logo: glanvillsLogo,
     logoText: "GE"
   },
   {
@@ -128,7 +131,6 @@ const SUBSIDIARIES_DATA: Subsidiary[] = [
     keyAssets: ["Digital ERP Backbone", "University Sandbox Labs", "Agro-Traceability Platform"],
     website: "https://swit.odua.ng",
     image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80",
-    logo: "https://www.google.com/s2/favicons?domain=swit.odua.ng&sz=128",
     logoText: "SWIT"
   },
   {
@@ -142,7 +144,6 @@ const SUBSIDIARIES_DATA: Subsidiary[] = [
     keyAssets: ["3,300ha Imeko Farm Hub", "4,283ha Oke-Ako Grain Farm", "Eleyele Agro Warehouse Hub"],
     website: "https://swagco.ng",
     image: "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=800&q=80",
-    logo: "https://swagco.ng/wp-content/uploads/2021/05/swagco-logo.png",
     logoText: "WIAL"
   },
   {
@@ -156,7 +157,6 @@ const SUBSIDIARIES_DATA: Subsidiary[] = [
     keyAssets: ["Cocoa Bean Processing Line", "Export Warehouses"],
     website: "https://oduainvestment.com.ng/portfolio",
     image: "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&w=800&q=80",
-    logo: "https://www.google.com/s2/favicons?domain=oduainvestment.com.ng&sz=128",
     logoText: "CIL"
   },
   {
@@ -184,7 +184,6 @@ const SUBSIDIARIES_DATA: Subsidiary[] = [
     keyAssets: ["Non-Life & Life Underwriting", "Corporate Pensions", "Nationwide Branch Network"],
     website: "https://greatnigeriaplc.com",
     image: "https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=800&q=80",
-    logo: "https://www.google.com/s2/favicons?domain=greatnigeriaplc.com&sz=128",
     logoText: "GNI"
   },
   {
@@ -198,7 +197,6 @@ const SUBSIDIARIES_DATA: Subsidiary[] = [
     keyAssets: ["₦1.1T+ AUM", "500,000+ RSA Contributors", "PenCom Aa- Grade"],
     website: "https://fcmbpensions.com",
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80",
-    logo: "https://www.google.com/s2/favicons?domain=fcmbpensions.com&sz=128",
     logoText: "FCMB"
   }
 ];
