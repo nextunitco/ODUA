@@ -1215,7 +1215,7 @@ export default function App() {
                   }
                   
                   if (link === 'Portfolio') {
-                    const isPortfolioActive = ['Portfolio', 'Our Subsidiaries', 'Our Associate Companies', 'Ongoing Projects', 'Our Strategic Thrust', 'Our Investment Approach', 'Subsidiaries Directory'].includes(currentPage);
+                    const isPortfolioActive = ['Portfolio', 'Our Subsidiaries', 'Our Associate Companies', 'Ongoing Projects', 'Our Strategic Thrust', 'Our Investment Approach'].includes(currentPage);
                     return (
                       <div 
                         key={link} 
@@ -1253,8 +1253,7 @@ export default function App() {
                                 { id: 'Our Associate Companies', label: 'Our Associate Companies' },
                                 { id: 'Ongoing Projects', label: 'Ongoing Projects' },
                                 { id: 'Our Strategic Thrust', label: 'Strategic Thrust' },
-                                { id: 'Our Investment Approach', label: 'Investment Approach' },
-                                { id: 'Subsidiaries Directory', label: 'Subsidiaries Directory' }
+                                { id: 'Our Investment Approach', label: 'Investment Approach' }
                               ].map((item) => (
                                 <button
                                   key={item.id}
@@ -1622,7 +1621,7 @@ export default function App() {
                   }
                   
                   if (link === 'Portfolio') {
-                    const isPortfolioActive = ['Portfolio', 'Our Subsidiaries', 'Our Associate Companies', 'Ongoing Projects', 'Our Strategic Thrust', 'Our Investment Approach', 'Subsidiaries Directory'].includes(currentPage);
+                    const isPortfolioActive = ['Portfolio', 'Our Subsidiaries', 'Our Associate Companies', 'Ongoing Projects', 'Our Strategic Thrust', 'Our Investment Approach'].includes(currentPage);
                     return (
                       <div key={link} className="space-y-1 text-xs">
                         <div className="flex items-center gap-1.5 w-full">
@@ -1661,8 +1660,7 @@ export default function App() {
                               { id: 'Our Associate Companies', label: 'Our Associate Companies' },
                               { id: 'Ongoing Projects', label: 'Ongoing Projects' },
                               { id: 'Our Strategic Thrust', label: 'Strategic Thrust' },
-                              { id: 'Our Investment Approach', label: 'Investment Approach' },
-                              { id: 'Subsidiaries Directory', label: 'Subsidiaries Directory' }
+                              { id: 'Our Investment Approach', label: 'Investment Approach' }
                             ].map((item) => (
                               <button
                                 key={item.id}

@@ -172,7 +172,7 @@ export default function Footer({
               </h4>
               <ul className="space-y-2 text-xs text-white/80 font-medium">
                 <li>
-                  <button onClick={() => setCurrentPage('Subsidiaries Directory')} className="hover:text-[#fce303] transition-colors cursor-pointer text-left flex items-center gap-1.5">
+                  <button onClick={() => setCurrentPage('Our Subsidiaries')} className="hover:text-[#fce303] transition-colors cursor-pointer text-left flex items-center gap-1.5">
                     <span>🏢</span> Wemabod & Real Estate Holdings
                   </button>
                 </li>
@@ -441,10 +441,10 @@ export default function Footer({
             <div className="space-y-3">
               <h5 className="text-xs font-bold uppercase tracking-wider text-emerald-400 font-mono">Key Subsidiaries</h5>
               <ul className="space-y-2 text-xs text-slate-300">
-                <li><button onClick={() => setCurrentPage('Subsidiaries Directory')} className="hover:text-white cursor-pointer">Wemabod Real Estate</button></li>
-                <li><button onClick={() => setCurrentPage('Subsidiaries Directory')} className="hover:text-white cursor-pointer">SWAgCo Agricultural Corp</button></li>
-                <li><button onClick={() => setCurrentPage('Subsidiaries Directory')} className="hover:text-white cursor-pointer">Premier Hotel Ibadan</button></li>
-                <li><button onClick={() => setCurrentPage('Subsidiaries Directory')} className="hover:text-white cursor-pointer">Lafia Hotel Hospitality</button></li>
+                <li><button onClick={() => setCurrentPage('Our Subsidiaries')} className="hover:text-white cursor-pointer">Wemabod Real Estate</button></li>
+                <li><button onClick={() => setCurrentPage('Our Subsidiaries')} className="hover:text-white cursor-pointer">SWAgCo Agricultural Corp</button></li>
+                <li><button onClick={() => setCurrentPage('Our Subsidiaries')} className="hover:text-white cursor-pointer">Premier Hotel Ibadan</button></li>
+                <li><button onClick={() => setCurrentPage('Our Subsidiaries')} className="hover:text-white cursor-pointer">Lafia Hotel Hospitality</button></li>
                 <li><button onClick={() => setCurrentPage('Odu\'a Foundation')} className="hover:text-white cursor-pointer">Odu'a Foundation (CSR)</button></li>
                 <li><a href="https://www.odif.ng/" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:text-emerald-300 cursor-pointer flex items-center gap-1">Foundation Portal (odif.ng) <ExternalLink className="w-3 h-3" /></a></li>
               </ul>
@@ -706,7 +706,6 @@ export default function Footer({
           <div className="space-y-4">
             <h3 className="text-xs font-bold uppercase tracking-widest font-mono" style={{ color: currentTheme.secondary }}>Ecosystem & Portals</h3>
             <ul className="space-y-2 text-xs text-white/70 font-light">
-              <li><button onClick={() => setCurrentPage('Subsidiaries Directory')} className="hover:text-[#fce303] hover:underline cursor-pointer text-left">Subsidiaries Directory</button></li>
               <li><button onClick={() => setIsCalculatorOpen(true)} className="hover:text-[#fce303] hover:underline cursor-pointer text-left font-bold text-[#00a757]">Co-Investment Yield Simulator</button></li>
               <li><button onClick={() => setCurrentPage('Governance & Whistleblowing')} className="hover:text-[#fce303] hover:underline cursor-pointer text-left">Whistleblowing & Compliance</button></li>
               <li><button onClick={() => setCurrentPage('Odu\'a Foundation')} className="hover:text-[#fce303] hover:underline cursor-pointer text-left">Odu'a Foundation (CSR)</button></li>

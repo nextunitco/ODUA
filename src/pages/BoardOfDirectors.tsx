@@ -421,7 +421,7 @@ export default function BoardOfDirectors({ setCurrentPage, boardMembers }: Board
 
               <div>
                 {/* Large Profile Image Area */}
-                <div className="w-full h-72 sm:h-80 overflow-hidden bg-neutral-100 relative">
+                  <div className="w-full h-80 sm:h-96 overflow-hidden bg-neutral-100 relative">
                   {member.image ? (
                     <img 
                       src={member.image} 

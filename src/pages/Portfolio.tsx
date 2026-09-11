@@ -752,8 +752,14 @@ export default function Portfolio({
                             {sub.name}
                           </h3>
                         </div>
-                        <div className="w-12 h-12 rounded-full bg-neutral-900 text-white flex items-center justify-center font-serif font-black tracking-widest text-sm shrink-0 border border-neutral-800">
-                          {sub.logoText}
+                        <div className="w-16 h-16 rounded-2xl bg-white flex items-center justify-center shrink-0 border border-neutral-200 shadow-sm overflow-hidden p-2">
+                          {sub.logo ? (
+                            <img src={sub.logo} alt={`${sub.name} logo`} className="w-full h-full object-contain" referrerPolicy="no-referrer" />
+                          ) : (
+                            <span className="w-full h-full rounded-xl bg-neutral-900 text-white flex items-center justify-center font-serif font-black tracking-widest text-xs text-center">
+                              {sub.logoText}
+                            </span>
+                          )}
                         </div>
                       </div>
 
@@ -796,6 +802,17 @@ export default function Portfolio({
                             <span className="font-light">{sub.contact.address}</span>
                           </div>
                         </div>
+                      )}
+
+                      {sub.website && (
+                        <a
+                          href={sub.website}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#00a757] hover:text-emerald-800 transition-colors"
+                        >
+                          Visit official website <ExternalLink className="w-3.5 h-3.5" />
+                        </a>
                       )}
                     </div>
                   </motion.div>
